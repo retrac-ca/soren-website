@@ -542,7 +542,78 @@
   color: var(--color-text-muted);
 }
 
-/* ── Hero on mobile ──────────────────────────────────────────────────────── */
+/* ════════════════════════════════════════════════════════════════════════════
+   POLICY PAGES (Privacy Policy & Terms of Service)
+   ════════════════════════════════════════════════════════════════════════════ */
+
+/* Constrained readable width for long-form legal prose */
+.policy-container {
+  max-width: 800px;
+}
+
+/* Each numbered section */
+.policy-section {
+  margin-bottom: var(--space-12);
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.policy-section:last-of-type {
+  border-bottom: none;
+}
+
+/* Section headings */
+.policy-section h2 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-4);
+  color: var(--color-text);
+}
+
+.policy-section h3 {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+  color: var(--color-text);
+}
+
+/* Body paragraphs — full readable width */
+.policy-section p {
+  max-width: none;
+  margin-bottom: var(--space-4);
+  line-height: var(--leading-loose);
+  color: var(--color-text-muted);
+}
+
+.policy-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Lists */
+.policy-section ul,
+.policy-section ol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  color: var(--color-text-muted);
+  line-height: var(--leading-normal);
+}
+
+.policy-section li {
+  margin-bottom: 0;
+}
+
+/* Bottom nav between policy pages */
+.policy-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-12);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
 @media (max-width: 768px) {
   .hero-inner {
     grid-template-columns: 1fr;

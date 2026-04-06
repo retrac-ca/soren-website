@@ -1,0 +1,244 @@
+{{!--
+  views/terms.hbs — Terms of Service
+  Data comes from routes/terms.js and config.js
+--}}
+
+<!-- ── Page Hero ──────────────────────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <span class="section-eyebrow">Legal</span>
+    <h1>Terms of Service</h1>
+    <p>Last updated: <strong>{{lastUpdated}}</strong></p>
+  </div>
+</section>
+
+<!-- ── Terms Content ─────────────────────────────────────────────────────── -->
+<section class="section--sm section">
+  <div class="container policy-container">
+
+    <div class="callout callout--info" style="margin-bottom:var(--space-10);">
+      <span>📋</span>
+      <span>
+        <strong>The short version:</strong> Use Soren to organize events in your Discord community.
+        Don't use it to harm others, break Discord's rules, or do anything illegal. Be respectful.
+        That's really all there is to it.
+      </span>
+    </div>
+
+    <!-- 1. Acceptance -->
+    <div class="policy-section">
+      <h2>1. Acceptance of Terms</h2>
+      <p>
+        By adding Soren to your Discord server or using any of its slash commands, buttons, or
+        features, you agree to be bound by these Terms of Service. If you do not agree, please
+        remove Soren from your server and discontinue use.
+      </p>
+      <p>
+        These Terms apply to all users of Soren, including server administrators, event creators,
+        and regular members who interact with RSVP buttons.
+      </p>
+    </div>
+
+    <!-- 2. Description of Service -->
+    <div class="policy-section">
+      <h2>2. Description of Service</h2>
+      <p>
+        Soren is a Discord bot that provides calendar and event management functionality for
+        Discord communities. Its features include:
+      </p>
+      <ul>
+        <li>Creating and managing events with RSVP signups via slash commands</li>
+        <li>Sending configurable pre-event reminders</li>
+        <li>Supporting recurring events on various schedules</li>
+        <li>Optional integration with Google Calendar</li>
+        <li>A Premium tier with expanded limits, available as a one-time purchase</li>
+      </ul>
+      <p>
+        Soren is a third-party bot and is not affiliated with, endorsed by, or sponsored by
+        Discord Inc. in any way. Use of Soren is subject to
+        <a href="https://discord.com/terms" target="_blank" rel="noopener">Discord's Terms of Service</a>
+        in addition to these terms.
+      </p>
+    </div>
+
+    <!-- 3. Eligibility -->
+    <div class="policy-section">
+      <h2>3. Eligibility</h2>
+      <p>To use Soren, you must:</p>
+      <ul>
+        <li>Be at least 13 years of age (as required by Discord's Terms of Service)</li>
+        <li>Have a valid Discord account in good standing</li>
+        <li>Have the appropriate permissions in your Discord server to add bots (for server administrators)</li>
+        <li>Comply with all applicable local, provincial, national, and international laws</li>
+      </ul>
+    </div>
+
+    <!-- 4. Acceptable Use -->
+    <div class="policy-section">
+      <h2>4. Acceptable Use</h2>
+      <p>You agree to use Soren only for its intended purpose of community event management. You agree <strong>not</strong> to:</p>
+      <ul>
+        <li>Use Soren to harass, threaten, harm, or discriminate against any individual or group</li>
+        <li>Create events with content that is illegal, defamatory, obscene, or violates any third-party rights</li>
+        <li>Attempt to exploit, abuse, or circumvent any limitations or security measures in Soren</li>
+        <li>Use Soren to spam Discord channels with excessive event embeds or reminder messages</li>
+        <li>Attempt to reverse engineer, decompile, or extract proprietary logic from Soren (note: the source code is already publicly available on GitHub)</li>
+        <li>Resell, sublicense, or misrepresent Soren as your own product</li>
+        <li>Use Soren in any way that violates Discord's <a href="https://discord.com/terms" target="_blank" rel="noopener">Terms of Service</a> or <a href="https://discord.com/guidelines" target="_blank" rel="noopener">Community Guidelines</a></li>
+        <li>Attempt to interfere with the bot's normal operation or the experience of other users</li>
+      </ul>
+    </div>
+
+    <!-- 5. Premium Tier -->
+    <div class="policy-section">
+      <h2>5. Premium Tier</h2>
+      <p>
+        Soren offers an optional Premium tier for a <strong>one-time fee of {{premiumPrice}} per server</strong>.
+        Premium is activated by redeeming a unique code via the <code>/premiumcode</code> command.
+      </p>
+
+      <h3>What Premium includes</h3>
+      <ul>
+        <li>Unlimited events per server (vs. 10 on the free tier)</li>
+        <li>Unlimited RSVP display (vs. 50 names shown on the free tier)</li>
+        <li>8 embed color options (vs. 3 on the free tier)</li>
+        <li>Unlimited Google Calendar integrations (vs. 5 on the free tier)</li>
+        <li>Access to all future premium features as they are released</li>
+      </ul>
+
+      <h3>Premium terms</h3>
+      <ul>
+        <li>Premium is <strong>per server</strong> — each server that wants Premium requires its own purchase and activation code.</li>
+        <li>Premium codes are <strong>single-use</strong> — once redeemed by a server, the code cannot be used again.</li>
+        <li>Premium is <strong>non-transferable</strong> between servers.</li>
+        <li>We do not offer refunds on Premium purchases once a code has been redeemed and activated.</li>
+        <li>If Soren is removed from a server and re-added, the Premium status associated with that server ID is retained in our database and will be restored.</li>
+        <li>We reserve the right to revoke Premium access from servers found to be in violation of these Terms of Service without refund.</li>
+      </ul>
+
+      <div class="callout callout--info" style="margin-top:var(--space-5);">
+        <span>ℹ️</span>
+        <span>
+          Premium purchases are processed externally via the Soren website. We do not handle
+          or store any payment card information. Payment processing is handled by our
+          payment provider and is subject to their terms.
+        </span>
+      </div>
+    </div>
+
+    <!-- 6. Google Calendar Integration -->
+    <div class="policy-section">
+      <h2>6. Google Calendar Integration</h2>
+      <p>
+        Soren's Google Calendar integration is entirely optional. By choosing to connect a
+        Google Calendar, you acknowledge that:
+      </p>
+      <ul>
+        <li>You authorize Soren to read from and write to the connected Google Calendar on your behalf</li>
+        <li>You are responsible for ensuring you have the right to connect the calendar you authorize (e.g. shared team calendars)</li>
+        <li>You can revoke Soren's access at any time via <code>/gcal disconnect</code>, <code>/gcalint remove</code>, or directly through your <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account permissions</a></li>
+        <li>Soren's use of Google Calendar APIs is subject to <a href="https://policies.google.com/terms" target="_blank" rel="noopener">Google's Terms of Service</a></li>
+      </ul>
+    </div>
+
+    <!-- 7. Open Source -->
+    <div class="policy-section">
+      <h2>7. Open Source and Self-Hosting</h2>
+      <p>
+        Soren's source code is publicly available under the
+        <strong>MIT License</strong> at
+        <a href="{{githubUrl}}" target="_blank" rel="noopener">{{githubUrl}}</a>.
+        You are free to self-host Soren on your own infrastructure under the terms of that license.
+      </p>
+      <p>
+        If you self-host Soren, you assume full responsibility for your deployment, including
+        data storage, security, uptime, and compliance with applicable laws. The developer
+        (Toadle / retrac) is not responsible for any self-hosted deployments.
+      </p>
+      <p>
+        The MIT license permits you to use, copy, modify, merge, publish, distribute,
+        sublicense, and sell copies of the software, provided the original copyright notice
+        and permission notice are included. You may not misrepresent the origin of the software
+        or claim that you wrote the original.
+      </p>
+    </div>
+
+    <!-- 8. Service Availability -->
+    <div class="policy-section">
+      <h2>8. Service Availability and Modifications</h2>
+      <p>
+        Soren is provided on an <strong>"as is" and "as available" basis</strong>. We make no
+        guarantees regarding uptime, availability, or uninterrupted service. The bot may
+        experience downtime due to hosting issues, Discord API outages, or maintenance.
+      </p>
+      <p>We reserve the right to:</p>
+      <ul>
+        <li>Modify, update, or discontinue any feature of Soren at any time with or without notice</li>
+        <li>Change the pricing or structure of the Premium tier for future purchases (existing Premium activations are not affected)</li>
+        <li>Shut down the hosted version of Soren entirely (the open-source nature of the project means self-hosting will always remain an option)</li>
+        <li>Remove Soren from any server that violates these Terms of Service</li>
+      </ul>
+    </div>
+
+    <!-- 9. Limitation of Liability -->
+    <div class="policy-section">
+      <h2>9. Limitation of Liability</h2>
+      <p>
+        To the fullest extent permitted by applicable law, Toadle / retrac shall not be liable
+        for any indirect, incidental, special, consequential, or punitive damages arising from
+        your use of or inability to use Soren, including but not limited to:
+      </p>
+      <ul>
+        <li>Missed events or reminders due to bot downtime</li>
+        <li>Data loss due to server failure or database corruption</li>
+        <li>Unauthorized access to your Discord server or Google Calendar</li>
+        <li>Any actions taken by other members of your Discord server in relation to Soren events</li>
+      </ul>
+      <p>
+        Soren is a free and low-cost community tool. Our total liability to you for any claim
+        arising from use of Soren shall not exceed the amount you paid for Premium (if any)
+        in the 12 months prior to the claim.
+      </p>
+    </div>
+
+    <!-- 10. Governing Law -->
+    <div class="policy-section">
+      <h2>10. Governing Law</h2>
+      <p>
+        These Terms of Service are governed by and construed in accordance with the laws of
+        <strong>Canada</strong>, without regard to conflict of law principles. Any disputes
+        arising from these Terms shall be subject to the exclusive jurisdiction of the courts
+        of Canada.
+      </p>
+    </div>
+
+    <!-- 11. Changes -->
+    <div class="policy-section">
+      <h2>11. Changes to These Terms</h2>
+      <p>
+        We may update these Terms of Service from time to time. When we do, we will update the
+        "Last updated" date at the top of this page. For significant changes, we will post a
+        notice in the Soren support Discord server. Continued use of Soren after changes are
+        posted constitutes your acceptance of the revised Terms.
+      </p>
+    </div>
+
+    <!-- 12. Contact -->
+    <div class="policy-section">
+      <h2>12. Contact Us</h2>
+      <p>If you have questions about these Terms of Service:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:info@retrac.ca">info@retrac.ca</a></li>
+        <li><strong>Discord:</strong> <a href="{{discordServer}}" target="_blank" rel="noopener">Join our support server</a></li>
+        <li><strong>GitHub:</strong> <a href="{{githubUrl}}" target="_blank" rel="noopener">Open an issue</a></li>
+      </ul>
+    </div>
+
+    <!-- Bottom nav -->
+    <div class="policy-nav">
+      <a href="/privacy" class="btn btn--secondary">Read Privacy Policy →</a>
+      <a href="/" class="btn btn--ghost">← Back to Home</a>
+    </div>
+
+  </div>
+</section>

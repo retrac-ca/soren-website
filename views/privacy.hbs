@@ -1,0 +1,251 @@
+{{!--
+  views/privacy.hbs — Privacy Policy
+  Data comes from routes/privacy.js and config.js
+--}}
+
+<!-- ── Page Hero ──────────────────────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <span class="section-eyebrow">Legal</span>
+    <h1>Privacy Policy</h1>
+    <p>Last updated: <strong>{{lastUpdated}}</strong></p>
+  </div>
+</section>
+
+<!-- ── Policy Content ────────────────────────────────────────────────────── -->
+<section class="section--sm section">
+  <div class="container policy-container">
+
+    <div class="callout callout--success" style="margin-bottom:var(--space-10);">
+      <span>🛡️</span>
+      <span>
+        <strong>The short version:</strong> Soren is a calendar bot. It stores only the minimum data
+        required to make events work. We do not sell your data, share it with advertisers, or hand
+        it to third-party data brokers — ever. Your community's event information belongs to you.
+      </span>
+    </div>
+
+    <!-- 1. Who We Are -->
+    <div class="policy-section">
+      <h2>1. Who We Are</h2>
+      <p>
+        Soren is a Discord bot created and operated by <strong>Toadle</strong> (operating under the
+        <strong>retrac</strong> brand), a Canadian independent developer. Soren is governed by
+        Canadian law and is subject to the
+        <strong>Personal Information Protection and Electronic Documents Act (PIPEDA)</strong>.
+      </p>
+      <p>
+        For any privacy-related questions or requests, contact us at:
+        <a href="mailto:info@retrac.ca">info@retrac.ca</a>
+      </p>
+    </div>
+
+    <!-- 2. What Data We Collect -->
+    <div class="policy-section">
+      <h2>2. What Data We Collect</h2>
+      <p>
+        Soren collects and stores only the data that is strictly necessary to provide its
+        calendar and events functionality. Nothing more.
+      </p>
+
+      <h3>Data stored per Discord server (guild)</h3>
+      <ul>
+        <li><strong>Guild ID</strong> — Discord's unique identifier for your server. Used to scope all data to the correct server.</li>
+        <li><strong>Event Creator Role ID</strong> — The role assigned during <code>/setup</code> that controls who can create events.</li>
+        <li><strong>Premium status</strong> — Whether the server has an active Premium tier.</li>
+        <li><strong>Embed color preference</strong> — The color chosen via <code>/embedcolor</code>.</li>
+        <li><strong>Google Calendar OAuth token</strong> — Only stored if you choose to connect Google Calendar via <code>/gcal connect</code>. See Section 5.</li>
+      </ul>
+
+      <h3>Data stored per event</h3>
+      <ul>
+        <li><strong>Event details</strong> — Title, description, start/end time, timezone, recurrence rule, and reminder offset as entered by the event creator.</li>
+        <li><strong>Channel ID and Message ID</strong> — Used to update the live event embed in Discord.</li>
+        <li><strong>Creator's Discord User ID</strong> — Stored to identify who created the event.</li>
+        <li><strong>Notify Role ID</strong> — If set, the role to ping when a reminder fires.</li>
+      </ul>
+
+      <h3>Data stored per RSVP</h3>
+      <ul>
+        <li><strong>Discord User ID</strong> — To track who has RSVPed and in what status (accepted, tentative, declined).</li>
+        <li><strong>RSVP status and timestamp</strong> — What the user clicked and when.</li>
+      </ul>
+
+      <h3>Data we do NOT collect</h3>
+      <ul>
+        <li>We do <strong>not</strong> read, store, or log message content from your Discord server.</li>
+        <li>We do <strong>not</strong> collect real names, email addresses, phone numbers, or any personally identifiable information beyond Discord User IDs.</li>
+        <li>We do <strong>not</strong> track user behaviour, browsing habits, or activity outside of direct interactions with Soren's slash commands and buttons.</li>
+        <li>We do <strong>not</strong> use cookies, tracking pixels, or analytics on the Soren bot itself.</li>
+        <li>We do <strong>not</strong> collect payment information. Premium purchases are handled externally and only a redemption code is passed to the bot.</li>
+      </ul>
+    </div>
+
+    <!-- 3. How We Use Data -->
+    <div class="policy-section">
+      <h2>3. How We Use Your Data</h2>
+      <p>Data collected by Soren is used exclusively to provide the bot's core functionality:</p>
+      <ul>
+        <li>Displaying event embeds in Discord with correct details and RSVP counts</li>
+        <li>Sending pre-event reminder messages to the correct channel and role</li>
+        <li>Maintaining live RSVP lists as users interact with event buttons</li>
+        <li>Enforcing per-server settings (event creator role, embed color, premium tier)</li>
+        <li>Syncing events with Google Calendar if you have chosen to connect one</li>
+      </ul>
+      <p>
+        We do not use your data for advertising, profiling, marketing, machine learning training,
+        or any purpose beyond what is listed above.
+      </p>
+    </div>
+
+    <!-- 4. Data Sharing -->
+    <div class="policy-section">
+      <h2>4. Data Sharing and Third Parties</h2>
+
+      <div class="callout callout--success" style="margin:var(--space-5) 0;">
+        <span>✅</span>
+        <span>
+          <strong>We do not sell, rent, trade, or share your data with any third-party data brokers,
+          advertisers, or analytics companies. Period.</strong>
+        </span>
+      </div>
+
+      <p>The only third-party service that may receive data is:</p>
+
+      <h3>Discord</h3>
+      <p>
+        Soren operates through the Discord API. All bot interactions — slash commands, button clicks,
+        embed updates — pass through Discord's infrastructure. Discord's own
+        <a href="https://discord.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>
+        governs how Discord handles that data. We have no control over Discord's data handling.
+      </p>
+
+      <h3>Google (optional — only if you connect Google Calendar)</h3>
+      <p>
+        If a server administrator chooses to connect a Google Calendar via <code>/gcal</code> or
+        <code>/gcalint</code>, Soren will communicate with the Google Calendar API on your behalf
+        using OAuth 2.0 tokens stored in the database. This data flow is:
+      </p>
+      <ul>
+        <li>Entirely opt-in — Google Calendar is never connected without an administrator explicitly running the connect commands</li>
+        <li>Scoped to calendar read/write only — Soren cannot access your Google account, Gmail, Drive, or any other Google service</li>
+        <li>Governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a></li>
+      </ul>
+      <p>
+        Google Calendar integration is completely optional. The core event system works entirely
+        without it.
+      </p>
+
+      <h3>Railway (website hosting)</h3>
+      <p>
+        This website is hosted on Railway. Railway may collect standard web server logs (IP addresses,
+        request paths, timestamps) as part of normal hosting operations. These logs are not shared
+        with us and are governed by
+        <a href="https://railway.app/legal/privacy" target="_blank" rel="noopener">Railway's Privacy Policy</a>.
+      </p>
+    </div>
+
+    <!-- 5. Data Storage and Security -->
+    <div class="policy-section">
+      <h2>5. Data Storage and Security</h2>
+      <p>
+        All Soren bot data is stored in a SQLite database on the server where the bot is hosted.
+        For self-hosted deployments, data is stored entirely on the server operator's own infrastructure.
+      </p>
+      <ul>
+        <li><strong>Google OAuth tokens</strong> are stored encrypted in the database and are only used to authenticate requests to the Google Calendar API on behalf of the server that connected them.</li>
+        <li><strong>Premium codes</strong> are stored in a flat file on the bot host and are never transmitted to users or logged publicly.</li>
+        <li><strong>Bot tokens and credentials</strong> (Discord bot token, Google credentials) are stored in environment variables and are never committed to version control or exposed publicly.</li>
+        <li>The Soren codebase is <strong>open source</strong> — you can review exactly what data is stored and how it is used at any time at <a href="{{githubUrl}}" target="_blank" rel="noopener">{{githubUrl}}</a>.</li>
+      </ul>
+      <p>
+        While we take reasonable precautions to protect stored data, no system is completely
+        immune to security risks. We encourage server administrators to follow Discord's own
+        security best practices and to revoke any connected Google Calendar access if they
+        believe their account has been compromised.
+      </p>
+    </div>
+
+    <!-- 6. Data Retention -->
+    <div class="policy-section">
+      <h2>6. Data Retention</h2>
+      <p>
+        Data is retained for as long as it is needed to provide the bot's functionality:
+      </p>
+      <ul>
+        <li><strong>Event data</strong> persists until the event is deleted via <code>/deleteevent</code> or the bot is removed from the server.</li>
+        <li><strong>RSVP data</strong> is automatically deleted when the associated event is deleted (cascade delete).</li>
+        <li><strong>Server configuration</strong> persists until the bot is removed from the server.</li>
+        <li><strong>Google Calendar tokens</strong> persist until disconnected via <code>/gcal disconnect</code> or <code>/gcalint remove</code>.</li>
+        <li><strong>Premium redemption records</strong> are retained indefinitely to prevent code reuse.</li>
+      </ul>
+      <p>
+        If you remove Soren from your Discord server, we will delete all data associated with
+        your server upon request. Contact us at <a href="mailto:info@retrac.ca">info@retrac.ca</a>
+        to request a full data deletion.
+      </p>
+    </div>
+
+    <!-- 7. Your Rights (PIPEDA) -->
+    <div class="policy-section">
+      <h2>7. Your Rights Under PIPEDA</h2>
+      <p>
+        As a Canadian-operated service, Soren complies with the
+        <strong>Personal Information Protection and Electronic Documents Act (PIPEDA)</strong>.
+        Under PIPEDA, you have the right to:
+      </p>
+      <ul>
+        <li><strong>Access</strong> — Request a copy of any personal information we hold about you (primarily your Discord User ID and associated RSVP records).</li>
+        <li><strong>Correction</strong> — Request correction of inaccurate data.</li>
+        <li><strong>Withdrawal of consent</strong> — Withdraw consent for data processing. Note that withdrawal may prevent Soren from functioning for your account.</li>
+        <li><strong>Deletion</strong> — Request deletion of your personal data from our systems.</li>
+        <li><strong>Complaint</strong> — File a complaint with the Office of the Privacy Commissioner of Canada if you believe your rights have been violated.</li>
+      </ul>
+      <p>
+        To exercise any of these rights, contact us at
+        <a href="mailto:info@retrac.ca">info@retrac.ca</a>.
+        We will respond within 30 days.
+      </p>
+    </div>
+
+    <!-- 8. Children's Privacy -->
+    <div class="policy-section">
+      <h2>8. Children's Privacy</h2>
+      <p>
+        Soren does not knowingly collect data from individuals under the age of 13, in accordance
+        with Discord's own Terms of Service which require users to be at least 13 years of age.
+        If you believe a child under 13 has submitted data through Soren, please contact us
+        at <a href="mailto:info@retrac.ca">info@retrac.ca</a> and we will delete it promptly.
+      </p>
+    </div>
+
+    <!-- 9. Changes -->
+    <div class="policy-section">
+      <h2>9. Changes to This Policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time. When we do, we will update the
+        "Last updated" date at the top of this page. For significant changes, we will post a
+        notice in the Soren support Discord server. Continued use of Soren after changes are
+        posted constitutes acceptance of the updated policy.
+      </p>
+    </div>
+
+    <!-- 10. Contact -->
+    <div class="policy-section">
+      <h2>10. Contact Us</h2>
+      <p>If you have any questions, concerns, or requests regarding this Privacy Policy:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:info@retrac.ca">info@retrac.ca</a></li>
+        <li><strong>Discord:</strong> <a href="{{discordServer}}" target="_blank" rel="noopener">Join our support server</a></li>
+        <li><strong>GitHub:</strong> <a href="{{githubUrl}}" target="_blank" rel="noopener">Open an issue</a></li>
+      </ul>
+    </div>
+
+    <!-- Bottom nav -->
+    <div class="policy-nav">
+      <a href="/terms" class="btn btn--secondary">Read Terms of Service →</a>
+      <a href="/" class="btn btn--ghost">← Back to Home</a>
+    </div>
+
+  </div>
+</section>

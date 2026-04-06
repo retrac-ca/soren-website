@@ -47,11 +47,15 @@ const homeRouter    = require("./routes/home");
 const featuresRouter= require("./routes/features");
 const setupRouter   = require("./routes/setup");
 const docsRouter    = require("./routes/docs");
+const privacyRouter = require("./routes/privacy");
+const termsRouter   = require("./routes/terms");
 
 app.use("/",         homeRouter);
 app.use("/features", featuresRouter);
 app.use("/setup",    setupRouter);
 app.use("/docs",     docsRouter);
+app.use("/privacy",  privacyRouter);
+app.use("/terms",    termsRouter);
 
 // ── 404 fallback ─────────────────────────────────────────────────────────────
 app.use((req, res) => {
