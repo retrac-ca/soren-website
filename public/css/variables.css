@@ -1,0 +1,165 @@
+/**
+ * variables.css — Design Tokens
+ * ===============================
+ * ALL colors, fonts, sizes, and spacing live here.
+ * To retheme the entire site, only edit this file.
+ *
+ * Color theme: Burnt orange accent on deep charcoal (dark) / warm off-white (light)
+ * This mirrors the Anthropic / Claude AI aesthetic the client requested.
+ */
+
+/* ── Dark Theme (default) ─────────────────────────────────────────────────── */
+:root,
+[data-theme="dark"] {
+
+  /* Brand / Accent Colors — Burnt orange palette */
+  --color-accent:         #D4570A;   /* Primary burnt orange */
+  --color-accent-light:   #E8742C;   /* Lighter orange for hover states */
+  --color-accent-dark:    #A8430A;   /* Deeper orange for pressed states */
+  --color-accent-glow:    rgba(212, 87, 10, 0.20);  /* Glow/shadow tint */
+  --color-accent-subtle:  rgba(212, 87, 10, 0.10);  /* Very light tint for backgrounds */
+
+  /* Background Layers */
+  --color-bg:             #0F0F0F;   /* Page background */
+  --color-bg-elevated:    #161616;   /* Cards, panels */
+  --color-bg-raised:      #1E1E1E;   /* Input fields, slightly raised elements */
+  --color-bg-overlay:     #252525;   /* Tooltips, dropdowns */
+  --color-border:         #2A2A2A;   /* Subtle borders */
+  --color-border-bright:  #3A3A3A;   /* More visible borders */
+
+  /* Text */
+  --color-text:           #F0EDE8;   /* Primary body text — warm white */
+  --color-text-muted:     #9A9490;   /* Secondary / helper text */
+  --color-text-subtle:    #5E5A56;   /* Disabled / placeholder text */
+  --color-text-inverse:   #0F0F0F;   /* Text on light backgrounds */
+
+  /* Status / Semantic */
+  --color-success:        #4CAF78;
+  --color-warning:        #E8A020;
+  --color-danger:         #E85A4F;
+  --color-info:           #5A9FE8;
+
+  /* Premium / Gold */
+  --color-premium:        #C8A84B;
+  --color-premium-glow:   rgba(200, 168, 75, 0.20);
+
+  /* Header */
+  --header-bg:            rgba(15, 15, 15, 0.92);
+  --header-border:        rgba(42, 42, 42, 0.80);
+  --header-height:        64px;
+}
+
+/* ── Light Theme ──────────────────────────────────────────────────────────── */
+[data-theme="light"] {
+
+  /* Brand colors stay the same — orange works on both themes */
+  --color-accent:         #C04A00;   /* Slightly deeper for light bg contrast */
+  --color-accent-light:   #D4570A;
+  --color-accent-dark:    #9A3A00;
+  --color-accent-glow:    rgba(192, 74, 0, 0.15);
+  --color-accent-subtle:  rgba(192, 74, 0, 0.08);
+
+  /* Background Layers */
+  --color-bg:             #FAF8F5;   /* Warm off-white page background */
+  --color-bg-elevated:    #FFFFFF;   /* Cards, panels */
+  --color-bg-raised:      #F2EFE9;   /* Inputs, slightly raised */
+  --color-bg-overlay:     #EDEAE3;   /* Tooltips, dropdowns */
+  --color-border:         #E0DBD3;   /* Subtle borders */
+  --color-border-bright:  #C8C2B8;   /* More visible borders */
+
+  /* Text */
+  --color-text:           #1A1714;   /* Deep warm black */
+  --color-text-muted:     #6B6560;   /* Secondary text */
+  --color-text-subtle:    #A09890;   /* Placeholder / disabled */
+  --color-text-inverse:   #FAF8F5;   /* Text on dark backgrounds */
+
+  /* Status / Semantic */
+  --color-success:        #2A8A50;
+  --color-warning:        #B87800;
+  --color-danger:         #C0392B;
+  --color-info:           #1A6EB5;
+
+  /* Premium */
+  --color-premium:        #A07820;
+  --color-premium-glow:   rgba(160, 120, 32, 0.15);
+
+  /* Header */
+  --header-bg:            rgba(250, 248, 245, 0.92);
+  --header-border:        rgba(224, 219, 211, 0.90);
+  --header-height:        64px;
+}
+
+/* ── Typography ───────────────────────────────────────────────────────────── */
+:root {
+  --font-display:  "Syne", sans-serif;      /* Headings, brand elements */
+  --font-body:     "DM Sans", sans-serif;   /* Body copy, UI text */
+  --font-mono:     "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
+
+  /* Type Scale */
+  --text-xs:    0.75rem;    /*  12px */
+  --text-sm:    0.875rem;   /*  14px */
+  --text-base:  1rem;       /*  16px */
+  --text-lg:    1.125rem;   /*  18px */
+  --text-xl:    1.25rem;    /*  20px */
+  --text-2xl:   1.5rem;     /*  24px */
+  --text-3xl:   1.875rem;   /*  30px */
+  --text-4xl:   2.25rem;    /*  36px */
+  --text-5xl:   3rem;       /*  48px */
+  --text-6xl:   3.75rem;    /*  60px */
+  --text-7xl:   4.5rem;     /*  72px */
+
+  /* Line Heights */
+  --leading-tight:  1.2;
+  --leading-snug:   1.35;
+  --leading-normal: 1.6;
+  --leading-loose:  1.8;
+
+  /* Letter Spacing */
+  --tracking-tight:  -0.03em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.04em;
+  --tracking-wider:   0.08em;
+  --tracking-widest:  0.15em;
+}
+
+/* ── Spacing & Layout ─────────────────────────────────────────────────────── */
+:root {
+  --space-1:   0.25rem;   /*  4px */
+  --space-2:   0.5rem;    /*  8px */
+  --space-3:   0.75rem;   /* 12px */
+  --space-4:   1rem;      /* 16px */
+  --space-5:   1.25rem;   /* 20px */
+  --space-6:   1.5rem;    /* 24px */
+  --space-8:   2rem;      /* 32px */
+  --space-10:  2.5rem;    /* 40px */
+  --space-12:  3rem;      /* 48px */
+  --space-16:  4rem;      /* 64px */
+  --space-20:  5rem;      /* 80px */
+  --space-24:  6rem;      /* 96px */
+  --space-32:  8rem;      /* 128px */
+
+  /* Container */
+  --container-max:  1160px;
+  --container-pad:  clamp(1rem, 5vw, 2.5rem);
+
+  /* Border Radius */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   20px;
+  --radius-2xl:  28px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.08);
+  --shadow-md:  0 4px 16px rgba(0,0,0,0.18);
+  --shadow-lg:  0 8px 32px rgba(0,0,0,0.24);
+  --shadow-xl:  0 16px 56px rgba(0,0,0,0.32);
+  --shadow-accent: 0 4px 24px var(--color-accent-glow);
+
+  /* Transitions */
+  --transition-fast:    150ms ease;
+  --transition-base:    250ms ease;
+  --transition-slow:    400ms ease;
+  --transition-spring:  300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}

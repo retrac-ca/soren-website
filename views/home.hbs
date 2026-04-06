@@ -1,0 +1,259 @@
+{{!--
+  views/home.hbs — Landing Page
+  All section data comes from routes/home.js and config.js
+--}}
+
+<!-- ── Hero ────────────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="container hero-inner">
+
+    <!-- Left: Text Content -->
+    <div class="hero-content">
+      <div class="hero-badge">📅 Discord Events Bot</div>
+
+      <h1>Your server's<br /><span class="accent">calendar,</span><br />reinvented.</h1>
+
+      <p class="hero-description">
+        Create events, collect RSVPs, fire reminders, and sync with Google Calendar —
+        all inside Discord. Built for clans, guilds, and communities who want full
+        ownership of their events.
+      </p>
+
+      <div class="hero-actions">
+        <a href="{{inviteUrl}}" class="btn btn--primary btn--large" target="_blank" rel="noopener">
+          ➕ Add to Discord
+        </a>
+        <a href="/features" class="btn btn--secondary btn--large">
+          See Features →
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Discord embed mockup -->
+    <div class="hero-visual">
+      <div class="hero-mockup">
+        <div style="font-size:0.7rem;color:var(--color-text-subtle);margin-bottom:0.75rem;font-family:var(--font-mono);">
+          📅 #events
+        </div>
+        <div class="discord-embed">
+          <div class="discord-embed-title">📅  Weekly Raid Night</div>
+          <div class="discord-embed-body">
+            🕐 <strong>Friday, July 4 2025  •  8:00 PM ET</strong>
+            <br /><br />
+            Bring your A-game. Invites going out to Wise Guys only.
+          </div>
+          <div class="discord-embed-field">
+            <div>
+              <div class="discord-embed-field-name">✅ Accepted (4)</div>
+              <div class="discord-embed-field-value">toadle<br/>silverback<br/>nova<br/>grizz</div>
+            </div>
+            <div>
+              <div class="discord-embed-field-name">❓ Tentative (1)</div>
+              <div class="discord-embed-field-value">koda</div>
+            </div>
+            <div>
+              <div class="discord-embed-field-name">❌ Declined (1)</div>
+              <div class="discord-embed-field-value">reaper</div>
+            </div>
+          </div>
+          <div class="discord-buttons">
+            <span class="discord-btn discord-btn--green">✅ Accept</span>
+            <span class="discord-btn discord-btn--grey">❓ Tentative</span>
+            <span class="discord-btn discord-btn--red">❌ Decline</span>
+            <span class="discord-btn discord-btn--blue">✏️ Edit</span>
+          </div>
+        </div>
+        <div style="font-size:0.65rem;color:var(--color-text-subtle);margin-top:0.75rem;text-align:right;font-family:var(--font-mono);">
+          Event ID: 12  •  Use buttons below to RSVP
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── Stats Bar ─────────────────────────────────────────────────────────── -->
+<div class="stats-bar">
+  <div class="container stats-inner">
+    <div class="stat reveal">
+      <div class="stat-value"><span class="accent">Free</span></div>
+      <div class="stat-label">to self-host</div>
+    </div>
+    <div class="stat reveal reveal-delay-1">
+      <div class="stat-value">100<span class="accent">%</span></div>
+      <div class="stat-label">open source</div>
+    </div>
+    <div class="stat reveal reveal-delay-2">
+      <div class="stat-value"><span class="accent">∞</span></div>
+      <div class="stat-label">RSVPs with Premium</div>
+    </div>
+    <div class="stat reveal reveal-delay-3">
+      <div class="stat-value">v<span class="accent">{{botVersion}}</span></div>
+      <div class="stat-label">current version</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Core Features ─────────────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">What Soren does</span>
+      <h2>Everything your community needs for events</h2>
+      <p>A complete event management system baked right into your Discord server — no third-party apps, no extra logins.</p>
+    </div>
+
+    <div class="home-features-grid">
+
+      <div class="card card-hover reveal reveal-delay-1">
+        <div class="feature-icon">📅</div>
+        <h4>Flexible Event Creation</h4>
+        <p>4-step guided flow with natural language date input. Single events, weekly raids, bi-monthly meets — any schedule you need.</p>
+      </div>
+
+      <div class="card card-hover reveal reveal-delay-2">
+        <div class="feature-icon">✅</div>
+        <h4>Live RSVP System</h4>
+        <p>Accept, Tentative, and Decline buttons on every event post. Attendee lists update in real-time as people click.</p>
+      </div>
+
+      <div class="card card-hover reveal reveal-delay-3">
+        <div class="feature-icon">⏰</div>
+        <h4>Smart Reminders</h4>
+        <p>Configurable pre-event reminders ping your notify role and all accepted RSVPers. Tracked in the database — never missed, even after restarts.</p>
+      </div>
+
+      <div class="card card-hover reveal reveal-delay-1">
+        <div class="feature-icon">🔁</div>
+        <h4>Recurring Events</h4>
+        <p>Daily, weekly, bi-weekly, monthly, and custom intervals. Set it once, and Soren advances to the next occurrence automatically after each reminder fires.</p>
+      </div>
+
+      <div class="card card-hover reveal reveal-delay-2">
+        <div class="feature-icon">📆</div>
+        <h4>Google Calendar Sync</h4>
+        <p>Connect Google Calendar to push your Discord events into it, or pull weekly summaries from any calendar directly into your channels.</p>
+      </div>
+
+      <div class="card card-hover reveal reveal-delay-3">
+        <div class="feature-icon">🎨</div>
+        <h4>Fully Customizable</h4>
+        <p>Server embed colors, custom RSVP button labels, Tentative button toggle — Soren adapts to your server's style.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── How it Works ───────────────────────────────────────────────────────── -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Getting Started</span>
+      <h2>Up and running in minutes</h2>
+      <p>Three steps and your server has a full events system.</p>
+    </div>
+
+    <div class="grid-3">
+
+      <div class="card reveal reveal-delay-1" style="text-align:center;">
+        <div class="step-number" style="margin:0 auto var(--space-5);">1</div>
+        <h4>Add Soren to your server</h4>
+        <p style="margin-inline:auto;">Click the invite link and authorize Soren with the required permissions.</p>
+      </div>
+
+      <div class="card reveal reveal-delay-2" style="text-align:center;">
+        <div class="step-number" style="margin:0 auto var(--space-5);">2</div>
+        <h4>Run <code>/setup</code></h4>
+        <p style="margin-inline:auto;">Assign the Event Creator role so your team can start creating events immediately.</p>
+      </div>
+
+      <div class="card reveal reveal-delay-3" style="text-align:center;">
+        <div class="step-number" style="margin:0 auto var(--space-5);">3</div>
+        <h4>Create your first event</h4>
+        <p style="margin-inline:auto;">Run <code>/newevent #channel</code> and follow the 4-step guided flow. That's it.</p>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:var(--space-10);">
+      <a href="/setup" class="btn btn--secondary">Full setup guide →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── Free vs Premium teaser ─────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Pricing</span>
+      <h2>Start free. Upgrade when you're ready.</h2>
+      <p>The free tier covers everything most communities need. Premium is a one-time purchase — no subscriptions, ever.</p>
+    </div>
+
+    <div class="pricing-cards reveal">
+
+      <div class="pricing-card">
+        <div>
+          <span class="badge badge--free">Free</span>
+          <div class="pricing-tier-name" style="margin-top:var(--space-4);">Free Tier</div>
+        </div>
+        <div class="pricing-price">
+          <span class="amount">$0</span>
+          <span class="period">forever</span>
+        </div>
+        <ul class="pricing-features">
+          <li>Up to 10 events per server</li>
+          <li>50 RSVP names per event</li>
+          <li>3 embed color choices</li>
+          <li>All event types &amp; recurrence</li>
+          <li>Google Calendar sync</li>
+          <li>Up to 5 G-Cal integrations</li>
+          <li class="disabled">Custom button labels</li>
+        </ul>
+        <a href="{{inviteUrl}}" class="btn btn--secondary" target="_blank" rel="noopener">Add to Discord</a>
+      </div>
+
+      <div class="pricing-card pricing-card--premium">
+        <div>
+          <span class="badge badge--premium">⭐ Premium</span>
+          <div class="pricing-tier-name" style="margin-top:var(--space-4);color:var(--color-premium);">Premium Tier</div>
+        </div>
+        <div class="pricing-price">
+          <span class="amount">{{premiumPrice}}</span>
+          <span class="period">{{premiumType}}</span>
+        </div>
+        <ul class="pricing-features">
+          <li>Unlimited events</li>
+          <li>Unlimited RSVP display</li>
+          <li>8 embed color choices</li>
+          <li>All event types &amp; recurrence</li>
+          <li>Google Calendar sync</li>
+          <li>Unlimited G-Cal integrations</li>
+          <li>Custom button labels (coming soon)</li>
+        </ul>
+        <a href="/features#pricing" class="btn btn--primary">Learn more →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────────────────────────── -->
+<section class="section cta-section">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <span class="section-eyebrow">Ready?</span>
+      <h2>Add Soren to your server today.</h2>
+      <p style="text-align:center;margin-inline:auto;">Free, open source, and takes under 5 minutes to set up. Your community's events deserve better than a sticky note in #announcements.</p>
+      <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;margin-top:var(--space-2);">
+        <a href="{{inviteUrl}}" class="btn btn--primary btn--large" target="_blank" rel="noopener">
+          ➕ Add to Discord
+        </a>
+        <a href="{{githubUrl}}" class="btn btn--secondary btn--large" target="_blank" rel="noopener">
+          GitHub →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

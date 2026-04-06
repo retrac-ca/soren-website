@@ -1,0 +1,299 @@
+{{!--
+  views/setup.hbs — Getting Started / Setup Guide
+  Data comes from routes/setup.js and config.js
+--}}
+
+<!-- ── Page Hero ──────────────────────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <span class="section-eyebrow">Getting Started</span>
+    <h1>Set up Soren in minutes</h1>
+    <p>Everything you need to go from zero to a fully working events system in your Discord server.</p>
+  </div>
+</section>
+
+<!-- ── Prerequisites ─────────────────────────────────────────────────────── -->
+<section class="section--sm section">
+  <div class="container" style="max-width:860px;">
+
+    <div class="callout callout--info reveal" style="margin-bottom:var(--space-8);">
+      <span>ℹ️</span>
+      <span>
+        You'll need <strong>Manage Server</strong> permission (or be the server owner) to add bots and run setup commands.
+      </span>
+    </div>
+
+    <!-- ── Step 1: Add the bot ─────────────────────────────────────────── -->
+    <div class="setup-steps">
+
+      <div class="setup-step reveal">
+        <div class="step-number">1</div>
+        <div class="setup-step-content">
+          <h3>Add Soren to your Discord server</h3>
+          <p>
+            Click the invite link below. You'll be asked to select a server and approve the required permissions.
+            Soren needs: <strong>Send Messages</strong>, <strong>Embed Links</strong>,
+            <strong>Read Message History</strong>, and <strong>Mention Everyone</strong>
+            (for pinging notify roles during reminders).
+          </p>
+          <a href="{{inviteUrl}}" class="btn btn--primary" target="_blank" rel="noopener">
+            ➕ Add Soren to Discord
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Step 2: Developer Portal ───────────────────────────────────── -->
+      <div class="setup-step reveal">
+        <div class="step-number">2</div>
+        <div class="setup-step-content">
+          <h3>Enable Server Members Intent</h3>
+          <p>
+            If you're self-hosting Soren, go to the
+            <a href="https://discord.com/developers/applications" target="_blank" rel="noopener">Discord Developer Portal</a>,
+            open your bot's settings, go to <strong>Bot → Privileged Gateway Intents</strong>,
+            and enable <strong>Server Members Intent</strong>.
+            This lets Soren resolve member names for RSVP lists.
+          </p>
+          <div class="callout callout--warning" style="margin-top:var(--space-4);">
+            <span>⚠️</span>
+            <span>If you're adding the hosted version of Soren (not self-hosting), skip this step — it's already configured.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Step 3: /setup ─────────────────────────────────────────────── -->
+      <div class="setup-step reveal">
+        <div class="step-number">3</div>
+        <div class="setup-step-content">
+          <h3>Run <code>/setup</code> in your server</h3>
+          <p>
+            In any text channel, type <code>/setup</code> and pick the role whose members should be able to
+            create, edit, and delete events. This is your <strong>Event Creator</strong> role —
+            it can be any existing role, or create a new one first.
+          </p>
+          <p style="margin-top:var(--space-3);">
+            Server administrators always have full access regardless of role assignment.
+          </p>
+        </div>
+      </div>
+
+      <!-- ── Step 4: /embedcolor ─────────────────────────────────────────── -->
+      <div class="setup-step reveal">
+        <div class="step-number">4</div>
+        <div class="setup-step-content">
+          <h3>Customize your embed color (optional)</h3>
+          <p>
+            Run <code>/embedcolor</code> to choose the accent color for all event embeds on your server.
+            Free servers get 3 colors (Blue, Red, Green). Premium servers unlock 8 colors including Gold, Purple, Cyan, and Orange.
+          </p>
+        </div>
+      </div>
+
+      <!-- ── Step 5: Create first event ─────────────────────────────────── -->
+      <div class="setup-step reveal">
+        <div class="step-number">5</div>
+        <div class="setup-step-content">
+          <h3>Create your first event with <code>/newevent</code></h3>
+          <p>Run <code>/newevent #channel</code> where <code>#channel</code> is where you want the event post to appear. You'll walk through 4 steps:</p>
+          <ol style="margin-top:var(--space-3);display:flex;flex-direction:column;gap:var(--space-2);">
+            <li><strong>Event type</strong> — Single, Daily, Weekly, Bi-Weekly, Bi-Monthly, Monthly, or Custom</li>
+            <li><strong>Timezone</strong> — Pick from a dropdown of common timezones</li>
+            <li><strong>Reminder timing</strong> — 15 min, 30 min, 1 hr, 2 hrs, or a custom offset</li>
+            <li><strong>Event details</strong> — Title, description, start/end time, notify role</li>
+          </ol>
+          <div class="callout callout--success" style="margin-top:var(--space-5);">
+            <span>✅</span>
+            <span>
+              <strong>Flexible date input:</strong> The start/end fields accept natural language like
+              <code>July 4 8pm</code>, <code>next Friday 9pm</code>, <code>tomorrow 8pm</code>,
+              or the strict format <code>2026-07-04 20:00</code>.
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Google Calendar Setup (optional) ──────────────────────────────────── -->
+<section class="section section--dark" id="google-calendar">
+  <div class="container" style="max-width:860px;">
+    <div class="reveal" style="margin-bottom:var(--space-10);">
+      <span class="section-eyebrow">Optional</span>
+      <h2>Google Calendar Integration</h2>
+      <p style="font-size:var(--text-lg);">
+        Soren has two separate Google Calendar features. Neither is required — the core event system
+        works completely without Google.
+      </p>
+    </div>
+
+    <div class="grid-2 reveal" style="margin-bottom:var(--space-10);">
+      <div class="card">
+        <h4>📤 Primary Sync (<code>/gcal</code>)</h4>
+        <p style="font-size:var(--text-sm);margin-top:var(--space-3);">
+          Connect one Google Calendar per server. Events created with <code>/newevent</code> are automatically pushed into it.
+          New events added directly in Google Calendar sync back to Discord every 15 minutes.
+        </p>
+      </div>
+      <div class="card">
+        <h4>📥 G-Cal Integrations (<code>/gcalint</code>)</h4>
+        <p style="font-size:var(--text-sm);margin-top:var(--space-3);">
+          Connect multiple Google Calendars. Each one posts a weekly digest summary into its own Discord channel.
+          Great for syncing a shared team or community calendar. Free tier: up to 5 integrations.
+        </p>
+      </div>
+    </div>
+
+    <div class="setup-steps">
+
+      <div class="setup-step reveal">
+        <div class="step-number">1</div>
+        <div class="setup-step-content">
+          <h3>Create a Google Cloud project</h3>
+          <p>
+            Go to <a href="https://console.cloud.google.com/" target="_blank" rel="noopener">Google Cloud Console</a>
+            and create a new project (or use an existing one). Name it anything — e.g. <code>Soren</code>.
+          </p>
+        </div>
+      </div>
+
+      <div class="setup-step reveal">
+        <div class="step-number">2</div>
+        <div class="setup-step-content">
+          <h3>Enable the Google Calendar API</h3>
+          <p>
+            In your project, go to <strong>APIs &amp; Services → Library</strong>.
+            Search for <strong>Google Calendar API</strong> and click <strong>Enable</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div class="setup-step reveal">
+        <div class="step-number">3</div>
+        <div class="setup-step-content">
+          <h3>Create OAuth credentials</h3>
+          <p>
+            Go to <strong>APIs &amp; Services → Credentials → Create Credentials → OAuth client ID</strong>.
+            Choose <strong>Web application</strong> as the type.
+            Under <strong>Authorized redirect URIs</strong>, add: <code>http://localhost</code>
+          </p>
+          <p style="margin-top:var(--space-3);">
+            Download the JSON file, rename it <code>google_credentials.json</code>, and place it in the Soren bot's root folder.
+          </p>
+          <div class="callout callout--warning" style="margin-top:var(--space-4);">
+            <span>⚠️</span>
+            <span>Never commit <code>google_credentials.json</code> to version control. It's already in Soren's <code>.gitignore</code>.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="setup-step reveal">
+        <div class="step-number">4</div>
+        <div class="setup-step-content">
+          <h3>Connect in Discord</h3>
+          <p>
+            Run <code>/gcalint add</code> (or <code>/gcal connect</code> for primary sync) and follow the prompts.
+            After authorizing with Google, your browser will show <em>"This site can't be reached"</em> — <strong>that's normal!</strong>
+          </p>
+          <p style="margin-top:var(--space-3);">
+            Copy the <code>code=</code> value from the browser URL bar and paste it into <code>/gcalint verify &lt;code&gt;</code>.
+            A calendar picker will appear — select which calendar to connect.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Self-hosting ───────────────────────────────────────────────────────── -->
+<section class="section" id="self-hosting">
+  <div class="container" style="max-width:860px;">
+    <div class="reveal" style="margin-bottom:var(--space-8);">
+      <span class="section-eyebrow">Self-Hosting</span>
+      <h2>Running Soren yourself</h2>
+      <p style="font-size:var(--text-lg);">Soren is fully open source. Clone it, run it on your own machine or VPS.</p>
+    </div>
+
+    <div class="reveal">
+      <h4 style="margin-bottom:var(--space-3);">Requirements</h4>
+      <ul style="margin-bottom:var(--space-6);">
+        <li>Python 3.10 or newer</li>
+        <li>A Discord bot application (<a href="https://discord.com/developers/applications" target="_blank" rel="noopener">create one here</a>)</li>
+        <li>Server Members Intent enabled on the bot</li>
+        <li><em>Optional:</em> Google Cloud project for Calendar features</li>
+      </ul>
+
+      <h4 style="margin-bottom:var(--space-3);">Quick start</h4>
+      <pre><code># Clone the repository
+git clone {{githubUrl}}.git
+cd soren
+
+# Create and activate a virtual environment
+python -m venv venv
+source venv/bin/activate       # macOS / Linux
+venv\Scripts\activate          # Windows PowerShell
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Configure your environment
+cp .env.example .env
+# Edit .env: add your DISCORD_TOKEN and BOT_OWNER_ID
+
+# Run the bot
+python bot.py</code></pre>
+
+      <h4 style="margin-top:var(--space-8);margin-bottom:var(--space-3);">Running as a service (Linux / VPS)</h4>
+      <p style="margin-bottom:var(--space-4);">
+        To keep Soren running after you close your terminal, create a systemd service:
+      </p>
+      <pre><code># /etc/systemd/system/soren.service
+[Unit]
+Description=Soren Discord Bot
+After=network.target
+
+[Service]
+Type=simple
+User=YOUR_USERNAME
+WorkingDirectory=/path/to/soren
+ExecStart=/path/to/soren/venv/bin/python bot.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target</code></pre>
+      <pre style="margin-top:var(--space-3);"><code>sudo systemctl enable soren
+sudo systemctl start soren
+sudo systemctl status soren   # check it's running</code></pre>
+    </div>
+  </div>
+</section>
+
+<!-- ── Next steps ─────────────────────────────────────────────────────────── -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">What's next?</span>
+      <h2>You're all set — now explore</h2>
+    </div>
+    <div class="grid-3 reveal">
+      <a href="/docs" class="card card-hover" style="text-decoration:none;">
+        <div class="feature-icon">📖</div>
+        <h4>Full Command Reference</h4>
+        <p>Every slash command, who can use it, and what it does.</p>
+      </a>
+      <a href="/features#pricing" class="card card-hover" style="text-decoration:none;">
+        <div class="feature-icon">⭐</div>
+        <h4>Upgrade to Premium</h4>
+        <p>Unlock unlimited events, RSVPs, and more for a one-time price.</p>
+      </a>
+      <a href="{{githubUrl}}" class="card card-hover" style="text-decoration:none;" target="_blank" rel="noopener">
+        <div class="feature-icon">🛠️</div>
+        <h4>Contribute on GitHub</h4>
+        <p>Soren is open source. Bug reports, PRs, and ideas are welcome.</p>
+      </a>
+    </div>
+  </div>
+</section>

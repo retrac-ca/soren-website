@@ -1,0 +1,231 @@
+{{!--
+  views/features.hbs — Features & Pricing Page
+  Data comes from routes/features.js (featureRows array) and config.js
+--}}
+
+<!-- ── Page Hero ──────────────────────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <span class="section-eyebrow">Features & Pricing</span>
+    <h1>Everything Soren can do</h1>
+    <p>A full breakdown of every feature — and an honest look at what's free vs. what's in Premium.</p>
+  </div>
+</section>
+
+<!-- ── Feature Highlights ─────────────────────────────────────────────────── -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Core Features</span>
+      <h2>Built for communities that actually organize things</h2>
+    </div>
+
+    <div class="grid-2" style="gap:var(--space-5);">
+
+      <div class="card card-hover reveal reveal-delay-1">
+        <div class="feature-icon">📅</div>
+        <h4>4-Step Event Creation</h4>
+        <p>
+          A guided flow picks recurrence type → timezone → reminder timing → event details.
+          Natural language dates like <code>next Friday 9pm</code> or <code>July 4 8pm</code> are fully supported.
+        </p>
+      </div>
+
+      <div class="card card-hover reveal reveal-delay-2">
+        <div class="feature-icon">✅</div>
+        <h4>Live RSVP Embeds</h4>
+        <p>
+          Every event gets Accept, Tentative, and Decline buttons. Attendee lists refresh live on the embed as people click —
+          no slash commands needed, just buttons.
+        </p>
+      </div>
+
+      <div class="card card-hover reveal reveal-delay-1">
+        <div class="feature-icon">⏰</div>
+        <h4>Configurable Reminders</h4>
+        <p>
+          Set reminders at 15 min, 30 min, 1 hour, 2 hours before — or pick a custom offset.
+          Soren pings the notify role and all accepted/tentative RSVPers. Tracked in the DB so they survive bot restarts.
+        </p>
+      </div>
+
+      <div class="card card-hover reveal reveal-delay-2">
+        <div class="feature-icon">🔁</div>
+        <h4>Recurring Events</h4>
+        <p>
+          Daily, weekly, bi-weekly, bi-monthly, monthly, or a custom day interval.
+          After the reminder fires, Soren automatically advances the event to its next occurrence.
+        </p>
+      </div>
+
+      <div class="card card-hover reveal reveal-delay-1">
+        <div class="feature-icon">📆</div>
+        <h4>G-Cal Integrations</h4>
+        <p>
+          Connect multiple Google Calendars, each posting weekly digest summaries into their own Discord channel.
+          Supports ◀ ▶ pagination for calendars with lots of events. Free tier allows up to 5 integrations.
+        </p>
+      </div>
+
+      <div class="card card-hover reveal reveal-delay-2">
+        <div class="feature-icon">🔗</div>
+        <h4>Primary Google Calendar Sync</h4>
+        <p>
+          Events created via <code>/newevent</code> can be pushed to a connected Google Calendar.
+          New events in that calendar sync back to Discord every 15 minutes.
+        </p>
+      </div>
+
+      <div class="card card-hover reveal reveal-delay-1">
+        <div class="feature-icon">🎨</div>
+        <h4>Custom Embed Colors</h4>
+        <p>
+          Run <code>/embedcolor</code> to pick your server's event embed color.
+          Free servers choose from 3 colors; Premium unlocks 8 — including Gold, Purple, Cyan, and Orange.
+        </p>
+      </div>
+
+      <div class="card card-hover reveal reveal-delay-2">
+        <div class="feature-icon">🏷️</div>
+        <h4>Button Customization</h4>
+        <p>
+          Use <code>/eventbuttons</code> to rename Accept, Tentative, and Decline labels on any event,
+          or hide the Tentative button entirely. Full label editing is a Premium feature (coming soon).
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Pricing ────────────────────────────────────────────────────────────── -->
+<section class="section section--dark" id="pricing">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Pricing</span>
+      <h2>Simple, honest pricing</h2>
+      <p>No subscriptions. No per-member fees. One flat price per server, paid once, good forever.</p>
+    </div>
+
+    <div class="pricing-cards reveal">
+
+      <!-- Free tier -->
+      <div class="pricing-card">
+        <div>
+          <span class="badge badge--free">Free</span>
+          <div class="pricing-tier-name" style="margin-top:var(--space-4);">Free</div>
+          <p style="font-size:var(--text-sm);margin-top:var(--space-2);max-width:none;">
+            Everything you need to get started. No credit card required.
+          </p>
+        </div>
+        <div class="pricing-price">
+          <span class="amount">$0</span>
+          <span class="period">forever</span>
+        </div>
+        <ul class="pricing-features">
+          <li>10 events per server</li>
+          <li>50 RSVP names shown per event</li>
+          <li>3 embed color choices</li>
+          <li>All recurrence types</li>
+          <li>Pre-event reminders</li>
+          <li>Google Calendar sync</li>
+          <li>Up to 5 G-Cal integrations</li>
+          <li class="disabled">Custom button labels</li>
+          <li class="disabled">Unlimited events &amp; RSVPs</li>
+        </ul>
+        <a href="{{inviteUrl}}" class="btn btn--secondary" target="_blank" rel="noopener">
+          Add to Discord — Free
+        </a>
+      </div>
+
+      <!-- Premium tier -->
+      <div class="pricing-card pricing-card--premium">
+        <div>
+          <span class="badge badge--premium">⭐ Premium</span>
+          <div class="pricing-tier-name" style="margin-top:var(--space-4);color:var(--color-premium);">Premium</div>
+          <p style="font-size:var(--text-sm);margin-top:var(--space-2);max-width:none;">
+            One-time purchase. Lifetime access. No renewals, ever.
+          </p>
+        </div>
+        <div class="pricing-price">
+          <span class="amount" style="color:var(--color-premium);">{{premiumPrice}}</span>
+          <span class="period">{{premiumType}}</span>
+        </div>
+        <ul class="pricing-features">
+          <li>Unlimited events</li>
+          <li>Unlimited RSVP display</li>
+          <li>8 embed color choices</li>
+          <li>All recurrence types</li>
+          <li>Pre-event reminders</li>
+          <li>Google Calendar sync</li>
+          <li>Unlimited G-Cal integrations</li>
+          <li>Custom button labels <span class="badge badge--accent" style="font-size:0.6rem;">Soon</span></li>
+          <li>All future premium features</li>
+        </ul>
+        <a href="{{supportUrl}}" class="btn btn--primary" target="_blank" rel="noopener">
+          Purchase Premium
+        </a>
+      </div>
+
+    </div>
+
+    <!-- How premium activation works -->
+    <div class="callout callout--info reveal" style="margin-top:var(--space-8);max-width:720px;margin-inline:auto;">
+      <span>ℹ️</span>
+      <span>
+        After purchasing, you'll receive a premium code via email. Redeem it in your Discord server with
+        <code>/premiumcode &lt;code&gt;</code> to activate Premium instantly. Codes are per-server and single-use.
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ── Full Feature Comparison Table ─────────────────────────────────────── -->
+<section class="section" id="comparison">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Full Comparison</span>
+      <h2>Free vs. Premium — side by side</h2>
+    </div>
+
+    <div class="comparison-wrapper reveal">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th style="width:50%;">Feature</th>
+            <th>Free</th>
+            <th class="col-premium">⭐ Premium</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each featureRows}}
+          <tr>
+            <td>{{this.feature}}</td>
+            <td>{{this.free}}</td>
+            <td style="color:var(--color-premium);font-weight:600;">{{this.premium}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ────────────────────────────────────────────────────────────────── -->
+<section class="section cta-section">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <span class="section-eyebrow">Get started</span>
+      <h2>Ready to add Soren?</h2>
+      <p style="text-align:center;margin-inline:auto;">Free to add. Takes 5 minutes to set up. Your community events sorted.</p>
+      <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;margin-top:var(--space-2);">
+        <a href="{{inviteUrl}}" class="btn btn--primary btn--large" target="_blank" rel="noopener">
+          ➕ Add to Discord
+        </a>
+        <a href="/setup" class="btn btn--secondary btn--large">
+          Setup Guide →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

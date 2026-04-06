@@ -1,0 +1,175 @@
+{{!--
+  views/docs.hbs — Documentation / Knowledgebase
+  Data (commandGroups, faqs) comes from routes/docs.js
+--}}
+
+<!-- ── Page Hero ──────────────────────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <span class="section-eyebrow">Documentation</span>
+    <h1>Soren Knowledgebase</h1>
+    <p>Full command reference, FAQ, and everything you need to get the most out of Soren.</p>
+  </div>
+</section>
+
+<!-- ── Docs Body ──────────────────────────────────────────────────────────── -->
+<section class="section--sm section">
+  <div class="container">
+    <div class="docs-layout">
+
+      <!-- ── Sidebar ──────────────────────────────────────────────────────── -->
+      <aside class="docs-sidebar">
+        <div class="docs-sidebar-title">Commands</div>
+        {{#each commandGroups}}
+        <a href="#{{this.category}}" class="docs-sidebar-link">
+          <span>{{this.icon}}</span> {{this.category}}
+        </a>
+        {{/each}}
+
+        <div class="docs-sidebar-title" style="margin-top:var(--space-4);">Help</div>
+        <a href="#faq" class="docs-sidebar-link">❓ FAQ</a>
+        <a href="/setup" class="docs-sidebar-link">⚙️ Setup Guide</a>
+        <a href="{{githubUrl}}" class="docs-sidebar-link" target="_blank" rel="noopener">🛠️ GitHub</a>
+      </aside>
+
+      <!-- ── Main Content ──────────────────────────────────────────────────── -->
+      <div class="docs-main">
+
+        <!-- Command reference intro -->
+        <div class="callout callout--info reveal" style="margin-bottom:var(--space-10);">
+          <span>📌</span>
+          <span>
+            Commands marked <strong>Event Creator</strong> require the Event Creator role assigned during
+            <code>/setup</code>. Server admins always have access to all commands.
+          </span>
+        </div>
+
+        <!-- ── Command Groups ──────────────────────────────────────────────── -->
+        {{#each commandGroups}}
+        <div class="command-category reveal" id="{{this.category}}">
+          <div class="command-category-header">
+            <span class="command-category-icon">{{this.icon}}</span>
+            <h2 class="command-category-title">{{this.category}}</h2>
+          </div>
+          <div class="command-list">
+            {{#each this.commands}}
+            <div class="command-block">
+              <code class="command-name">{{this.name}}</code>
+              <span class="command-desc">{{this.description}}</span>
+              <span class="command-who">{{this.who}}</span>
+            </div>
+            {{/each}}
+          </div>
+        </div>
+        {{/each}}
+
+        <!-- ── FAQ ───────────────────────────────────────────────────────────── -->
+        <div id="faq" class="reveal" style="margin-top:var(--space-16);">
+          <div class="command-category-header">
+            <span class="command-category-icon">❓</span>
+            <h2 class="command-category-title">Frequently Asked Questions</h2>
+          </div>
+
+          <div class="faq-list">
+            {{#each faqs}}
+            <div class="faq-item">
+              <button class="faq-question" type="button">
+                <span>{{this.q}}</span>
+                <span class="faq-chevron">▾</span>
+              </button>
+              <div class="faq-answer">{{this.a}}</div>
+            </div>
+            {{/each}}
+          </div>
+        </div>
+
+        <!-- ── Timezone Reference ──────────────────────────────────────────── -->
+        <div id="Timezones" class="reveal" style="margin-top:var(--space-16);">
+          <div class="command-category-header">
+            <span class="command-category-icon">🌍</span>
+            <h2 class="command-category-title">Supported Timezones</h2>
+          </div>
+
+          <p style="margin-bottom:var(--space-6);">
+            These timezones are available in the <code>/newevent</code> timezone picker.
+            The edit modal also accepts any valid
+            <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="noopener">IANA timezone name</a>.
+          </p>
+
+          <div class="comparison-wrapper">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th style="text-align:left;">Label</th>
+                  <th style="text-align:left;">Timezone ID</th>
+                  <th style="text-align:left;">Offset</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Eastern Time (ET)</td><td><code>America/New_York</code></td><td>UTC-5 / UTC-4 DST</td></tr>
+                <tr><td>Central Time (CT)</td><td><code>America/Chicago</code></td><td>UTC-6 / UTC-5 DST</td></tr>
+                <tr><td>Mountain Time (MT)</td><td><code>America/Denver</code></td><td>UTC-7 / UTC-6 DST</td></tr>
+                <tr><td>Mountain Time — AZ</td><td><code>America/Phoenix</code></td><td>UTC-7, no DST</td></tr>
+                <tr><td>Pacific Time (PT)</td><td><code>America/Los_Angeles</code></td><td>UTC-8 / UTC-7 DST</td></tr>
+                <tr><td>Alaska Time (AKT)</td><td><code>America/Anchorage</code></td><td>UTC-9 / UTC-8 DST</td></tr>
+                <tr><td>Hawaii Time (HT)</td><td><code>Pacific/Honolulu</code></td><td>UTC-10, no DST</td></tr>
+                <tr><td>Atlantic Time (AT)</td><td><code>America/Halifax</code></td><td>UTC-4 / UTC-3 DST</td></tr>
+                <tr><td>Newfoundland Time (NT)</td><td><code>America/St_Johns</code></td><td>UTC-3:30 / UTC-2:30 DST</td></tr>
+                <tr><td>London (GMT/BST)</td><td><code>Europe/London</code></td><td>UTC+0 / UTC+1 DST</td></tr>
+                <tr><td>Berlin (CET/CEST)</td><td><code>Europe/Berlin</code></td><td>UTC+1 / UTC+2 DST</td></tr>
+                <tr><td>Sydney (AEDT/AEST)</td><td><code>Australia/Sydney</code></td><td>UTC+11 / UTC+10</td></tr>
+                <tr><td>Tokyo (JST)</td><td><code>Asia/Tokyo</code></td><td>UTC+9, no DST</td></tr>
+                <tr><td>New Delhi (IST)</td><td><code>Asia/Kolkata</code></td><td>UTC+5:30, no DST</td></tr>
+                <tr><td>UTC</td><td><code>UTC</code></td><td>UTC+0</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- ── Database Schema (for self-hosters) ─────────────────────────── -->
+        <div id="Database" class="reveal" style="margin-top:var(--space-16);">
+          <div class="command-category-header">
+            <span class="command-category-icon">🗄️</span>
+            <h2 class="command-category-title">Database Overview</h2>
+          </div>
+
+          <p style="margin-bottom:var(--space-6);">
+            Soren uses SQLite stored at <code>data/soren.db</code>.
+            All tables are created automatically on startup — no manual setup required.
+            New columns added in updates are applied via <code>ALTER TABLE</code> migrations so you never need to wipe your database.
+          </p>
+
+          <div class="grid-2" style="gap:var(--space-4);">
+            <div class="card card--flat">
+              <h4 style="margin-bottom:var(--space-2);">guild_config</h4>
+              <p style="font-size:var(--text-sm);">Per-server settings — Event Creator role, premium status, Google Calendar token, and embed color.</p>
+            </div>
+            <div class="card card--flat">
+              <h4 style="margin-bottom:var(--space-2);">events</h4>
+              <p style="font-size:var(--text-sm);">All events created via <code>/newevent</code>. Includes recurrence rules, reminder config, and button label overrides.</p>
+            </div>
+            <div class="card card--flat">
+              <h4 style="margin-bottom:var(--space-2);">rsvps</h4>
+              <p style="font-size:var(--text-sm);">One row per user per event. Cascades on event delete. Tracks accepted, declined, and tentative statuses.</p>
+            </div>
+            <div class="card card--flat">
+              <h4 style="margin-bottom:var(--space-2);">gcal_integrations</h4>
+              <p style="font-size:var(--text-sm);">Connected Google Calendars for the G-Cal Integrations feature. Each has its own OAuth token and posting schedule.</p>
+            </div>
+            <div class="card card--flat">
+              <h4 style="margin-bottom:var(--space-2);">redeemed_codes</h4>
+              <p style="font-size:var(--text-sm);">Tracks which premium codes have been used. Prevents double-redemption. Valid codes live in <code>premium_keys.txt</code>, not here.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Bottom nav ─────────────────────────────────────────────────── -->
+        <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-16);padding-top:var(--space-8);border-top:1px solid var(--color-border);">
+          <a href="/setup" class="btn btn--secondary">← Setup Guide</a>
+          <a href="{{githubUrl}}" class="btn btn--secondary" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

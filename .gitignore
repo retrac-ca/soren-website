@@ -137,3 +137,17 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# ── Soren Website ─────────────────────────────────────────────────────────────
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# IDE folders
+.vscode/
+.idea/
+
+# Future: environment secrets (when dashboard/OAuth is added)
+.env.local
+.env.production

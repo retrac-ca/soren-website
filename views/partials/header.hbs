@@ -1,0 +1,55 @@
+<!-- ── Header / Navigation Partial ─────────────────────────────────────────
+     Included automatically in the main layout.
+     Active link highlighting uses the activePage variable from each route.
+────────────────────────────────────────────────────────────────────────── -->
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+
+    <!-- Logo -->
+    <a href="/" class="logo-link" aria-label="{{botName}} Home">
+      <div class="logo">
+        <img src="https://i.postimg.cc/brwRqpwb/Soren-Regular-Logo.jpg" alt="{{botName}}" class="logo-img" />
+        <span class="logo-text">{{botName}}</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="/"         class="nav-link {{#if (eq activePage 'home')}}active{{/if}}">Home</a>
+      <a href="/features" class="nav-link {{#if (eq activePage 'features')}}active{{/if}}">Features</a>
+      <a href="/setup"    class="nav-link {{#if (eq activePage 'setup')}}active{{/if}}">Setup</a>
+      <a href="/docs"     class="nav-link {{#if (eq activePage 'docs')}}active{{/if}}">Docs</a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+      <!-- Dark/Light mode toggle -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle theme">
+        <span class="theme-icon theme-icon--dark">🌙</span>
+        <span class="theme-icon theme-icon--light">☀️</span>
+      </button>
+
+      <!-- Add to Discord CTA -->
+      <a href="{{inviteUrl}}" class="btn btn--primary btn--small" target="_blank" rel="noopener noreferrer">
+        Add to Discord
+      </a>
+
+      <!-- Mobile hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <nav aria-label="Mobile navigation">
+      <a href="/"         class="mobile-nav-link {{#if (eq activePage 'home')}}active{{/if}}">🏠 Home</a>
+      <a href="/features" class="mobile-nav-link {{#if (eq activePage 'features')}}active{{/if}}">✨ Features</a>
+      <a href="/setup"    class="mobile-nav-link {{#if (eq activePage 'setup')}}active{{/if}}">⚙️ Setup</a>
+      <a href="/docs"     class="mobile-nav-link {{#if (eq activePage 'docs')}}active{{/if}}">📖 Docs</a>
+      <a href="{{inviteUrl}}" class="btn btn--primary mobile-nav-cta" target="_blank" rel="noopener">Add to Discord</a>
+    </nav>
+  </div>
+</header>
