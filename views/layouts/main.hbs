@@ -6,15 +6,23 @@
   <meta name="description" content="{{botDescription}}" />
   <title>{{title}}</title>
 
+  <!-- ── Open Graph / Social Preview ─────────────────────────────────── -->
+  <meta property="og:title"        content="{{ogTitle}}" />
+  <meta property="og:description"  content="{{ogDescription}}" />
+  <meta property="og:image"        content="{{ogImage}}" />
+  <meta property="og:url"          content="{{ogUrl}}" />
+  <meta property="og:type"         content="website" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="{{ogTitle}}" />
+  <meta name="twitter:description" content="{{ogDescription}}" />
+  <meta name="twitter:image"       content="{{ogImage}}" />
+
   <!-- ── Fonts ────────────────────────────────────────────────────────── -->
-  <!-- Syne: geometric, modern display font for headings -->
-  <!-- DM Sans: clean, readable body font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <!-- ── Stylesheets ──────────────────────────────────────────────────── -->
-  <!-- Load order matters: variables → base → components → layout → pages -->
   <link rel="stylesheet" href="/css/variables.css" />
   <link rel="stylesheet" href="/css/base.css" />
   <link rel="stylesheet" href="/css/components.css" />
@@ -40,7 +48,6 @@
   {{> footer}}
 
   <!-- ── Theme Toggle Script ───────────────────────────────────────────── -->
-  <!-- Loaded first so there's no flash of wrong theme on page load -->
   <script src="/js/theme.js"></script>
 
   <!-- ── Page Interaction Scripts ──────────────────────────────────────── -->

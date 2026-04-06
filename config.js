@@ -17,21 +17,27 @@ module.exports = {
   botVersion:     "1.2",
   botTagline:     "The calendar & events bot built for communities.",
   botDescription: "Create events, manage RSVPs, and sync with Google Calendar — all inside Discord. Built for clans, guilds, and communities who want full ownership of their events.",
-  supportUrl:     "https://soren.retrac.ca",     // Your support/website domain
+  supportUrl:     "https://soren.retrac.ca",
   creatorName:    "Toadle",
   creatorGithub:  "https://github.com/retrac-ca/soren",
 
   // ── Links ──────────────────────────────────────────────────────────────────
   inviteUrl:      "https://discord.com/oauth2/authorize?client_id=1423474696783138839&permissions=17929878105152&integration_type=0&scope=bot",
-  discordServer:  "https://discord.gg/rrgds8nGUx",    // Your support Discord server invite
+  discordServer:  "https://discord.gg/rrgds8nGUx",
   githubUrl:      "https://github.com/retrac-ca/soren",
+  purchaseUrl:    "https://ko-fi.com/s/7cefffca89",
 
   // ── Pricing ────────────────────────────────────────────────────────────────
   premiumPrice:   "$15",
   premiumType:    "one-time per server",
 
+  // ── Open Graph / Social Preview ────────────────────────────────────────────
+  ogTitle:        "Soren — Discord Events & Calendar Bot",
+  ogDescription:  "Create events, manage RSVPs, and sync with Google Calendar — all inside Discord. Built for clans, guilds, and communities.",
+  ogImage:        "https://i.postimg.cc/brwRqpwb/Soren-Regular-Logo.jpg",
+  ogUrl:          "https://soren.retrac.ca",
+
   // ── Navigation Links ────────────────────────────────────────────────────────
-  // Adjust nav order/labels here; they render automatically in the header
   navLinks: [
     { label: "Home",     href: "/",         icon: "🏠" },
     { label: "Features", href: "/features", icon: "✨" },
