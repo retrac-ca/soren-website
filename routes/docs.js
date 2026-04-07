@@ -20,7 +20,7 @@ router.get("/", (req, res) => {
         commands: [
           { name: "/ping",    who: "Everyone",  description: "Check bot status, latency, uptime, and version info." },
           { name: "/help",    who: "Everyone",  description: "Show all available commands in a quick reference embed." },
-          { name: "/premium", who: "Everyone",  description: "View the free vs. premium feature comparison and pricing." },
+          { name: "/premium", who: "Everyone",  description: "View the free vs. premium feature comparison and pricing directly in Discord." },
         ],
       },
       {
@@ -42,8 +42,8 @@ router.get("/", (req, res) => {
           { name: "/deleteevent",   who: "Event Creator", description: "Permanently delete an event and its embed." },
           { name: "/cancelevent",   who: "Event Creator", description: "Soft-cancel an event (marks as cancelled without deleting)." },
           { name: "/listevents",    who: "Everyone",      description: "View all upcoming events in this server, paginated." },
-          { name: "/myevents",      who: "Everyone",      description: "List events you've RSVPed to (accepted or tentative)." },
-          { name: "/eventbuttons",  who: "Event Creator", description: "Customize RSVP button labels and toggle the Tentative button." },
+          { name: "/myevents",      who: "Everyone",      description: "List all events you've RSVPed to (accepted or tentative) across the server." },
+          { name: "/eventbuttons",  who: "Event Creator", description: "Toggle the Tentative button on any event. Custom RSVP label renaming requires Premium." },
         ],
       },
       {
@@ -91,8 +91,16 @@ router.get("/", (req, res) => {
         a: "They're two separate systems. /gcal sync pushes events you create via /newevent into Google Calendar. G-Cal Integrations (/gcalint) reads from Google Calendar and posts weekly digest summaries into Discord — great for syncing a shared team calendar into your server. Free tier allows up to 2 integrations; Premium allows up to 10."
       },
       {
+        q: "Can I notify multiple roles when a reminder fires?",
+        a: "Free servers can notify 1 role per event reminder. Premium servers can notify up to 3 roles — useful for communities with multiple member groups or divisions."
+      },
+      {
+        q: "How do I see which events I've RSVPed to?",
+        a: "Run /myevents in any channel to see a list of all events you've accepted or marked tentative in the server."
+      },
+      {
         q: "Is Premium per-server or per-account?",
-        a: "Premium is per-server. Each server that wants premium features needs its own activation code."
+        a: "Premium is per-server. Each server that wants premium features needs its own activation code. Run /premium in Discord to see the full feature comparison."
       },
       {
         q: "Can I self-host Soren?",

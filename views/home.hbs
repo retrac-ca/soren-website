@@ -84,8 +84,8 @@
       <div class="stat-label">open source</div>
     </div>
     <div class="stat reveal reveal-delay-2">
-      <div class="stat-value"><span class="accent">100</span></div>
-      <div class="stat-label">RSVPs with Premium</div>
+      <div class="stat-value"><span class="accent">$25</span> CAD</div>
+      <div class="stat-label">one-time price</div>
     </div>
     <div class="stat reveal reveal-delay-3">
       <div class="stat-value">v<span class="accent">{{botVersion}}</span></div>
@@ -114,13 +114,13 @@
       <div class="card card-hover reveal reveal-delay-2">
         <div class="feature-icon">✅</div>
         <h4>Live RSVP System</h4>
-        <p>Accept, Tentative, and Decline buttons on every event post. Attendee lists update in real-time as people click.</p>
+        <p>Accept, Tentative, and Decline buttons on every event post. Attendee lists update in real-time as people click. Use <code>/myevents</code> to see all events you've RSVPed to.</p>
       </div>
 
       <div class="card card-hover reveal reveal-delay-3">
         <div class="feature-icon">⏰</div>
         <h4>Smart Reminders</h4>
-        <p>Configurable pre-event reminders ping your notify role and all accepted RSVPers. Tracked in the database — never missed, even after restarts.</p>
+        <p>Configurable pre-event reminders ping your notify role and all accepted RSVPers. Tracked in the database — never missed, even after restarts. Premium servers can notify up to 3 roles per event.</p>
       </div>
 
       <div class="card card-hover reveal reveal-delay-1">
@@ -138,7 +138,7 @@
       <div class="card card-hover reveal reveal-delay-3">
         <div class="feature-icon">🎨</div>
         <h4>Fully Customizable</h4>
-        <p>Server embed colors, custom RSVP button labels, Tentative button toggle — Soren adapts to your server's style.</p>
+        <p>Server embed colors and Tentative button toggle are available to all servers. Custom RSVP button labels are a <strong>Premium</strong> feature — rename Accept, Tentative, and Decline to anything you like.</p>
       </div>
 
     </div>
@@ -214,6 +214,7 @@
           <li class="disabled">Custom button labels</li>
         </ul>
         <a href="{{inviteUrl}}" class="btn btn--secondary" target="_blank" rel="noopener">Add to Discord</a>
+        <a href="/setup" class="btn btn--ghost" style="margin-top:var(--space-2);display:block;text-align:center;font-size:var(--text-sm);">Setup guide →</a>
       </div>
 
       <!-- Premium tier -->
@@ -234,9 +235,10 @@
           <li>Pre-event reminders (up to 3 roles)</li>
           <li>Google Calendar sync</li>
           <li>Up to 10 G-Cal integrations</li>
-          <li>Custom button labels <span class="badge badge--accent" style="font-size:0.6rem;">Soon</span></li>
+          <li>Custom button labels</li>
         </ul>
-        <a href="/features#pricing" class="btn btn--primary">Learn more →</a>
+        <a href="{{purchaseUrl}}" class="btn btn--primary" target="_blank" rel="noopener">⭐ Purchase Premium</a>
+        <a href="/features#comparison" class="btn btn--ghost" style="margin-top:var(--space-2);display:block;text-align:center;font-size:var(--text-sm);">Compare all features →</a>
       </div>
 
     </div>

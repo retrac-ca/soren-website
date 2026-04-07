@@ -23,7 +23,7 @@ router.get("/", (req, res) => {
       { feature: "Google Calendar sync",            free: "✅",                premium: "✅" },
       { feature: "G-Cal integrations",              free: "Up to 2",          premium: "Up to 10" },
       { feature: "Mention & reminder notifications",free: "1 role",           premium: "Up to 3 roles" },
-      { feature: "Custom button labels",            free: "❌",                premium: "✅ (coming soon)" },
+      { feature: "Custom button labels",            free: "❌",                premium: "✅" },
       { feature: "Future premium features",         free: "❌",                premium: "✅ Included" },
       { feature: "Support",                         free: "Community",        premium: "Priority" },
     ],
