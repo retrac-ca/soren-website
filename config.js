@@ -28,7 +28,7 @@ module.exports = {
   purchaseUrl:    "https://ko-fi.com/s/7cefffca89",
 
   // ── Pricing ────────────────────────────────────────────────────────────────
-  premiumPrice:   "$15",
+  premiumPrice:   "$25 CAD",
   premiumType:    "one-time per server",
 
   // ── Open Graph / Social Preview ────────────────────────────────────────────
