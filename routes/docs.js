@@ -13,8 +13,6 @@ router.get("/", (req, res) => {
     title:      `Documentation — ${config.botName}`,
     activePage: "docs",
 
-    // Command reference data
-    // Edit commands here — grouped by category
     commandGroups: [
       {
         category: "General",
@@ -31,7 +29,7 @@ router.get("/", (req, res) => {
         commands: [
           { name: "/setup",        who: "Admins", description: "First-time server setup. Assigns the Event Creator role." },
           { name: "/config",       who: "Admins", description: "View current server configuration and settings." },
-          { name: "/embedcolor",   who: "Admins", description: "Choose the color for event embeds (3 free, 8 premium)." },
+          { name: "/embedcolor",   who: "Admins", description: "Choose the color for event embeds (3 free, 10 premium)." },
           { name: "/premiumcode",  who: "Admins", description: "Redeem a premium activation code for your server." },
         ],
       },
@@ -71,7 +69,6 @@ router.get("/", (req, res) => {
       },
     ],
 
-    // FAQ data — add/remove questions here
     faqs: [
       {
         q: "Do I need Google Cloud to use Soren?",
@@ -79,7 +76,7 @@ router.get("/", (req, res) => {
       },
       {
         q: "What happens when I hit the free event limit?",
-        a: "Soren will show an error when you try to create more than 10 events on the free tier. You can delete old events to make room, or upgrade to Premium for unlimited events."
+        a: "Soren will show an error when you try to create more than 10 active events on the free tier. You can delete old events to make room, or upgrade to Premium for up to 50 active events."
       },
       {
         q: "Can multiple people create events?",
@@ -91,7 +88,7 @@ router.get("/", (req, res) => {
       },
       {
         q: "What is the G-Cal Integrations feature vs. Google Calendar Sync?",
-        a: "They're two separate systems. /gcal sync pushes events you create via /newevent into Google Calendar. G-Cal Integrations (/gcalint) reads from Google Calendar and posts weekly digest summaries into Discord — great for syncing a shared team calendar into your server."
+        a: "They're two separate systems. /gcal sync pushes events you create via /newevent into Google Calendar. G-Cal Integrations (/gcalint) reads from Google Calendar and posts weekly digest summaries into Discord — great for syncing a shared team calendar into your server. Free tier allows up to 2 integrations; Premium allows up to 10."
       },
       {
         q: "Is Premium per-server or per-account?",

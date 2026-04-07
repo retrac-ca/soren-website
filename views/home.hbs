@@ -84,7 +84,7 @@
       <div class="stat-label">open source</div>
     </div>
     <div class="stat reveal reveal-delay-2">
-      <div class="stat-value"><span class="accent">∞</span></div>
+      <div class="stat-value"><span class="accent">100</span></div>
       <div class="stat-label">RSVPs with Premium</div>
     </div>
     <div class="stat reveal reveal-delay-3">
@@ -193,6 +193,7 @@
 
     <div class="pricing-cards reveal">
 
+      <!-- Free tier -->
       <div class="pricing-card">
         <div>
           <span class="badge badge--free">Free</span>
@@ -203,17 +204,19 @@
           <span class="period">forever</span>
         </div>
         <ul class="pricing-features">
-          <li>Up to 10 events per server</li>
-          <li>50 RSVP names per event</li>
+          <li>10 active events per server</li>
+          <li>50 RSVP names shown per event</li>
           <li>3 embed color choices</li>
           <li>All event types &amp; recurrence</li>
+          <li>Pre-event reminders (1 role)</li>
           <li>Google Calendar sync</li>
-          <li>Up to 5 G-Cal integrations</li>
+          <li>Up to 2 G-Cal integrations</li>
           <li class="disabled">Custom button labels</li>
         </ul>
         <a href="{{inviteUrl}}" class="btn btn--secondary" target="_blank" rel="noopener">Add to Discord</a>
       </div>
 
+      <!-- Premium tier -->
       <div class="pricing-card pricing-card--premium">
         <div>
           <span class="badge badge--premium">⭐ Premium</span>
@@ -224,13 +227,14 @@
           <span class="period">{{premiumType}}</span>
         </div>
         <ul class="pricing-features">
-          <li>Unlimited events</li>
-          <li>Unlimited RSVP display</li>
-          <li>8 embed color choices</li>
+          <li>50 active events per server</li>
+          <li>100 RSVP names shown per event</li>
+          <li>10 embed color choices</li>
           <li>All event types &amp; recurrence</li>
+          <li>Pre-event reminders (up to 3 roles)</li>
           <li>Google Calendar sync</li>
-          <li>Unlimited G-Cal integrations</li>
-          <li>Custom button labels (coming soon)</li>
+          <li>Up to 10 G-Cal integrations</li>
+          <li>Custom button labels <span class="badge badge--accent" style="font-size:0.6rem;">Soon</span></li>
         </ul>
         <a href="/features#pricing" class="btn btn--primary">Learn more →</a>
       </div>
