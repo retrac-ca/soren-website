@@ -16,17 +16,16 @@ router.get("/", (req, res) => {
     // Feature comparison table data
     // To add/remove rows, edit this array — the template handles the rest
     featureRows: [
-      { feature: "Events per server",        free: "10",          premium: "Unlimited" },
-      { feature: "RSVP list per event",      free: "50 shown",    premium: "Unlimited" },
-      { feature: "Embed color choices",      free: "3 colors",    premium: "8 colors" },
-      { feature: "Single & recurring events",free: "✅",           premium: "✅" },
-      { feature: "Accept / Tentative / Decline RSVP", free: "✅", premium: "✅" },
-      { feature: "Pre-event reminders",      free: "✅",           premium: "✅" },
-      { feature: "Google Calendar sync",     free: "✅",           premium: "✅" },
-      { feature: "G-Cal integrations",       free: "Up to 5",     premium: "Unlimited" },
-      { feature: "Custom button labels",     free: "❌",           premium: "✅ (coming soon)" },
-      { feature: "Future premium features",  free: "❌",           premium: "✅ Included" },
-      { feature: "Support",                  free: "Community",   premium: "Priority" },
+      { feature: "Active events per server",        free: "10",               premium: "50" },
+      { feature: "RSVP names shown per event",      free: "50",               premium: "100" },
+      { feature: "Embed color choices",             free: "3 colors",         premium: "10 colors" },
+      { feature: "Recurring events",                free: "✅",                premium: "✅" },
+      { feature: "Google Calendar sync",            free: "✅",                premium: "✅" },
+      { feature: "G-Cal integrations",              free: "Up to 2",          premium: "Up to 10" },
+      { feature: "Mention & reminder notifications",free: "1 role",           premium: "Up to 3 roles" },
+      { feature: "Custom button labels",            free: "❌",                premium: "✅ (coming soon)" },
+      { feature: "Future premium features",         free: "❌",                premium: "✅ Included" },
+      { feature: "Support",                         free: "Community",        premium: "Priority" },
     ],
   });
 });
