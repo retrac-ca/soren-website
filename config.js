@@ -14,7 +14,7 @@ module.exports = {
 
   // ── Bot Info ───────────────────────────────────────────────────────────────
   botName:        "Soren",
-  botVersion:     "1.2",
+  botVersion:     "4.0 Beta",
   botTagline:     "The calendar & events bot built for communities.",
   botDescription: "Create events, manage RSVPs, and sync with Google Calendar — all inside Discord. Built for clans, guilds, and communities who want full ownership of their events.",
   supportUrl:     "https://soren.retrac.ca",

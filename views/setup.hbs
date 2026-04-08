@@ -42,28 +42,9 @@
         </div>
       </div>
 
-      <!-- ── Step 2: Developer Portal ───────────────────────────────────── -->
+      <!-- ── Step 2: /setup ─────────────────────────────────────────────── -->
       <div class="setup-step reveal">
         <div class="step-number">2</div>
-        <div class="setup-step-content">
-          <h3>Enable Server Members Intent</h3>
-          <p>
-            If you're self-hosting Soren, go to the
-            <a href="https://discord.com/developers/applications" target="_blank" rel="noopener">Discord Developer Portal</a>,
-            open your bot's settings, go to <strong>Bot → Privileged Gateway Intents</strong>,
-            and enable <strong>Server Members Intent</strong>.
-            This lets Soren resolve member names for RSVP lists.
-          </p>
-          <div class="callout callout--warning" style="margin-top:var(--space-4);">
-            <span>⚠️</span>
-            <span>If you're adding the hosted version of Soren (not self-hosting), skip this step — it's already configured.</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- ── Step 3: /setup ─────────────────────────────────────────────── -->
-      <div class="setup-step reveal">
-        <div class="step-number">3</div>
         <div class="setup-step-content">
           <h3>Run <code>/setup</code> in your server</h3>
           <p>
@@ -77,9 +58,9 @@
         </div>
       </div>
 
-      <!-- ── Step 4: /embedcolor ─────────────────────────────────────────── -->
+      <!-- ── Step 3: /embedcolor ─────────────────────────────────────────── -->
       <div class="setup-step reveal">
-        <div class="step-number">4</div>
+        <div class="step-number">3</div>
         <div class="setup-step-content">
           <h3>Customize your embed color (optional)</h3>
           <p>
@@ -89,9 +70,9 @@
         </div>
       </div>
 
-      <!-- ── Step 5: Create first event ─────────────────────────────────── -->
+      <!-- ── Step 4: Create first event ─────────────────────────────────── -->
       <div class="setup-step reveal">
-        <div class="step-number">5</div>
+        <div class="step-number">4</div>
         <div class="setup-step-content">
           <h3>Create your first event with <code>/newevent</code></h3>
           <p>
@@ -137,9 +118,9 @@
         </div>
       </div>
 
-      <!-- ── Step 6: Useful commands ────────────────────────────────────── -->
+      <!-- ── Step 5: Useful commands ────────────────────────────────────── -->
       <div class="setup-step reveal">
-        <div class="step-number">6</div>
+        <div class="step-number">5</div>
         <div class="setup-step-content">
           <h3>Useful commands to know</h3>
           <p>Once your first event is live, here are a few commands your members will find handy:</p>
@@ -254,70 +235,6 @@
   </div>
 </section>
 
-<!-- ── Self-hosting ───────────────────────────────────────────────────────── -->
-<section class="section" id="self-hosting">
-  <div class="container" style="max-width:860px;">
-    <div class="reveal" style="margin-bottom:var(--space-8);">
-      <span class="section-eyebrow">Self-Hosting</span>
-      <h2>Running Soren yourself</h2>
-      <p style="font-size:var(--text-lg);">Soren is fully open source. Clone it, run it on your own machine or VPS.</p>
-    </div>
-
-    <div class="reveal">
-      <h4 style="margin-bottom:var(--space-3);">Requirements</h4>
-      <ul style="margin-bottom:var(--space-6);">
-        <li>Python 3.10 or newer</li>
-        <li>A Discord bot application (<a href="https://discord.com/developers/applications" target="_blank" rel="noopener">create one here</a>)</li>
-        <li>Server Members Intent enabled on the bot</li>
-        <li><em>Optional:</em> Google Cloud project for Calendar features</li>
-      </ul>
-
-      <h4 style="margin-bottom:var(--space-3);">Quick start</h4>
-      <pre><code># Clone the repository
-git clone {{githubUrl}}.git
-cd soren
-
-# Create and activate a virtual environment
-python -m venv venv
-source venv/bin/activate       # macOS / Linux
-venv\Scripts\activate          # Windows PowerShell
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Configure your environment
-cp .env.example .env
-# Edit .env: add your DISCORD_TOKEN and BOT_OWNER_ID
-
-# Run the bot
-python bot.py</code></pre>
-
-      <h4 style="margin-top:var(--space-8);margin-bottom:var(--space-3);">Running as a service (Linux / VPS)</h4>
-      <p style="margin-bottom:var(--space-4);">
-        To keep Soren running after you close your terminal, create a systemd service:
-      </p>
-      <pre><code># /etc/systemd/system/soren.service
-[Unit]
-Description=Soren Discord Bot
-After=network.target
-
-[Service]
-Type=simple
-User=YOUR_USERNAME
-WorkingDirectory=/path/to/soren
-ExecStart=/path/to/soren/venv/bin/python bot.py
-Restart=on-failure
-RestartSec=5
-
-[Install]
-WantedBy=multi-user.target</code></pre>
-      <pre style="margin-top:var(--space-3);"><code>sudo systemctl enable soren
-sudo systemctl start soren
-sudo systemctl status soren   # check it's running</code></pre>
-    </div>
-  </div>
-</section>
-
 <!-- ── Next steps ─────────────────────────────────────────────────────────── -->
 <section class="section section--dark">
   <div class="container">
@@ -336,10 +253,10 @@ sudo systemctl status soren   # check it's running</code></pre>
         <h4>Upgrade to Premium</h4>
         <p>Unlock more events, RSVPs, colors, and G-Cal integrations for a one-time price.</p>
       </a>
-      <a href="{{githubUrl}}" class="card card-hover" style="text-decoration:none;" target="_blank" rel="noopener">
-        <div class="feature-icon">🛠️</div>
-        <h4>Contribute on GitHub</h4>
-        <p>Soren is open source. Bug reports, PRs, and ideas are welcome.</p>
+      <a href="{{discordServer}}" class="card card-hover" style="text-decoration:none;" target="_blank" rel="noopener">
+        <div class="feature-icon">💬</div>
+        <h4>Join the Beta</h4>
+        <p>Get early access, report bugs, and help shape Soren's future in the support Discord.</p>
       </a>
     </div>
   </div>
