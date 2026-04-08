@@ -37,8 +37,8 @@ router.get("/", (req, res) => {
         category: "Events",
         icon: "📅",
         commands: [
-          { name: "/newevent",      who: "Event Creator", description: "Create a new event via a 4-step guided flow: type → timezone → reminder → details." },
-          { name: "/editevent",     who: "Event Creator", description: "Edit an existing event by its ID (slash command fallback)." },
+          { name: "/newevent",      who: "Event Creator", description: "Create an event in a single command. Required: channel, title, start. Optional: timezone (autocomplete), recurrence (autocomplete), role (@mention picker), reminder (minutes), end, description, max_rsvp." },
+          { name: "/editevent",     who: "Event Creator", description: "Edit an existing event by its ID." },
           { name: "/deleteevent",   who: "Event Creator", description: "Permanently delete an event and its embed." },
           { name: "/cancelevent",   who: "Event Creator", description: "Soft-cancel an event (marks as cancelled without deleting)." },
           { name: "/listevents",    who: "Everyone",      description: "View all upcoming events in this server, paginated." },
@@ -87,6 +87,10 @@ router.get("/", (req, res) => {
         a: "Yes. Soren registers its views persistently so buttons remain fully functional across restarts. No need to re-post events."
       },
       {
+        q: "How do I set a timezone or recurrence when creating an event?",
+        a: "Both are optional fields in /newevent. As you type in the timezone field, Discord will autocomplete matching options from a curated list first, then fall back to all IANA timezones for more specific searches. Recurrence shows 7 options — Single, Daily, Weekly, Bi-Weekly, Bi-Monthly, Monthly, and Custom — as a searchable autocomplete list."
+      },
+      {
         q: "What is the G-Cal Integrations feature vs. Google Calendar Sync?",
         a: "They're two separate systems. /gcal sync pushes events you create via /newevent into Google Calendar. G-Cal Integrations (/gcalint) reads from Google Calendar and posts weekly digest summaries into Discord — great for syncing a shared team calendar into your server. Free tier allows up to 2 integrations; Premium allows up to 10."
       },
@@ -97,6 +101,10 @@ router.get("/", (req, res) => {
       {
         q: "How do I see which events I've RSVPed to?",
         a: "Run /myevents in any channel to see a list of all events you've accepted or marked tentative in the server."
+      },
+      {
+        q: "Can I set a cap on how many people can RSVP?",
+        a: "Yes — use the max_rsvp field in /newevent to set a cap on accepted RSVPs for that event."
       },
       {
         q: "Is Premium per-server or per-account?",

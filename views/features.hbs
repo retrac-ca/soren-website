@@ -24,10 +24,11 @@
 
       <div class="card card-hover reveal reveal-delay-1">
         <div class="feature-icon">📅</div>
-        <h4>4-Step Event Creation</h4>
+        <h4>Fast Event Creation</h4>
         <p>
-          A guided flow picks recurrence type → timezone → reminder timing → event details.
-          Natural language dates like <code>next Friday 9pm</code> or <code>July 4 8pm</code> are fully supported.
+          Create an event in a single slash command — type your channel, title, start time, and any optional
+          fields like recurrence, timezone, notify role, reminder offset, and RSVP cap. Discord autocompletes
+          as you type. Natural language dates like <code>next Friday 9pm</code> or <code>July 4 8pm</code> are fully supported.
         </p>
       </div>
 
@@ -44,7 +45,7 @@
         <div class="feature-icon">⏰</div>
         <h4>Configurable Reminders</h4>
         <p>
-          Set reminders at 15 min, 30 min, 1 hour, 2 hours before — or pick a custom offset.
+          Set a reminder offset directly in <code>/newevent</code> — 15 min, 30 min, 1 hour, 2 hours, or a custom number of minutes.
           Soren pings the notify role and all accepted/tentative RSVPers. Tracked in the DB so they survive bot restarts.
         </p>
       </div>
@@ -53,8 +54,9 @@
         <div class="feature-icon">🔁</div>
         <h4>Recurring Events</h4>
         <p>
-          Daily, weekly, bi-weekly, bi-monthly, monthly, or a custom day interval.
-          After the reminder fires, Soren automatically advances the event to its next occurrence.
+          Daily, weekly, bi-weekly, bi-monthly, monthly, or a custom day interval — selected right in the
+          <code>/newevent</code> command via autocomplete. After the reminder fires, Soren automatically
+          advances the event to its next occurrence.
         </p>
       </div>
 

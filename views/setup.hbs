@@ -23,9 +23,9 @@
       </span>
     </div>
 
-    <!-- ── Step 1: Add the bot ─────────────────────────────────────────── -->
     <div class="setup-steps">
 
+      <!-- ── Step 1: Add the bot ─────────────────────────────────────────── -->
       <div class="setup-step reveal">
         <div class="step-number">1</div>
         <div class="setup-step-content">
@@ -94,17 +94,42 @@
         <div class="step-number">5</div>
         <div class="setup-step-content">
           <h3>Create your first event with <code>/newevent</code></h3>
-          <p>Run <code>/newevent #channel</code> where <code>#channel</code> is where you want the event post to appear. You'll walk through 4 steps:</p>
-          <ol style="margin-top:var(--space-3);display:flex;flex-direction:column;gap:var(--space-2);">
-            <li><strong>Event type</strong> — Single, Daily, Weekly, Bi-Weekly, Bi-Monthly, Monthly, or Custom</li>
-            <li><strong>Timezone</strong> — Pick from a dropdown of common timezones</li>
-            <li><strong>Reminder timing</strong> — 15 min, 30 min, 1 hr, 2 hrs, or a custom offset</li>
-            <li><strong>Event details</strong> — Title, description, start/end time, notify role</li>
-          </ol>
+          <p>
+            Type <code>/newevent</code> and fill in the fields as Discord autocompletes them.
+            Only three fields are required — everything else is optional:
+          </p>
+          <div class="callout callout--info" style="margin-top:var(--space-4);margin-bottom:var(--space-4);">
+            <span>💡</span>
+            <span>
+              <strong>Example:</strong>
+              <code>/newevent channel:#events title:Weekly Raid Night start:Friday 9pm timezone:America/New_York recurrence:Weekly role:@Members reminder:30</code>
+            </span>
+          </div>
+          <table class="comparison-table" style="margin-top:var(--space-4);">
+            <thead>
+              <tr>
+                <th style="text-align:left;">Field</th>
+                <th style="text-align:left;">Required</th>
+                <th style="text-align:left;">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>channel</code></td><td>✅ Yes</td><td>The channel where the event post will appear</td></tr>
+              <tr><td><code>title</code></td><td>✅ Yes</td><td>The name of your event</td></tr>
+              <tr><td><code>start</code></td><td>✅ Yes</td><td>Start time — natural language like <code>Friday 9pm</code> or <code>July 4 8pm</code></td></tr>
+              <tr><td><code>timezone</code></td><td>Optional</td><td>Autocompletes from a curated list, then falls back to all IANA timezones</td></tr>
+              <tr><td><code>recurrence</code></td><td>Optional</td><td>Single, Daily, Weekly, Bi-Weekly, Bi-Monthly, Monthly, or Custom — searchable autocomplete</td></tr>
+              <tr><td><code>role</code></td><td>Optional</td><td>The role to ping for reminders — native Discord @mention picker</td></tr>
+              <tr><td><code>reminder</code></td><td>Optional</td><td>Minutes before the event to send the reminder (e.g. <code>30</code> for 30 minutes)</td></tr>
+              <tr><td><code>end</code></td><td>Optional</td><td>End time for the event</td></tr>
+              <tr><td><code>description</code></td><td>Optional</td><td>Additional details shown in the event embed</td></tr>
+              <tr><td><code>max_rsvp</code></td><td>Optional</td><td>Cap the number of accepted RSVPs for the event</td></tr>
+            </tbody>
+          </table>
           <div class="callout callout--success" style="margin-top:var(--space-5);">
             <span>✅</span>
             <span>
-              <strong>Flexible date input:</strong> The start/end fields accept natural language like
+              <strong>Flexible date input:</strong> The <code>start</code> and <code>end</code> fields accept natural language like
               <code>July 4 8pm</code>, <code>next Friday 9pm</code>, <code>tomorrow 8pm</code>,
               or the strict format <code>2026-07-04 20:00</code>.
             </span>
