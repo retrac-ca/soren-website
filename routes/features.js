@@ -21,7 +21,7 @@ router.get("/", (req, res) => {
       { feature: "Embed color choices",             free: "3 colors",         premium: "10 colors" },
       { feature: "Recurring events",                free: "✅",                premium: "✅" },
       { feature: "Google Calendar sync",            free: "✅",                premium: "✅" },
-      { feature: "G-Cal integrations",              free: "Up to 2",          premium: "Up to 10" },
+      { feature: "G-Cal integrations",              free: "Up to 2",          premium: "Up to 5" },
       { feature: "Mention & reminder notifications",free: "1 role",           premium: "Up to 3 roles" },
       { feature: "Custom button labels",            free: "❌",                premium: "✅" },
       { feature: "Future premium features",         free: "❌",                premium: "✅ Included" },
