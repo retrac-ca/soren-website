@@ -75,22 +75,29 @@
 <!-- ── Stats Bar ─────────────────────────────────────────────────────────── -->
 <div class="stats-bar">
   <div class="container stats-inner">
+
     <div class="stat reveal">
       <div class="stat-value"><span class="accent">$25</span> CAD</div>
       <div class="stat-label">one-time price</div>
     </div>
+
+    {{!-- ↓ SERVER COUNT — update this number manually as new servers add Soren --}}
     <div class="stat reveal reveal-delay-1">
-      <div class="stat-value">100<span class="accent">%</span></div>
-      <div class="stat-label">open source</div>
+      <div class="stat-value"><span class="accent">1</span></div>
+      <div class="stat-label">active servers</div>
     </div>
+    {{!-- ↑ SERVER COUNT --}}
+
     <div class="stat reveal reveal-delay-2">
       <div class="stat-value"><span class="accent">No</span></div>
       <div class="stat-label">subscriptions, ever</div>
     </div>
+
     <div class="stat reveal reveal-delay-3">
       <div class="stat-value">v<span class="accent">{{botVersion}}</span></div>
       <div class="stat-label">current version</div>
     </div>
+
   </div>
 </div>
 
@@ -234,7 +241,7 @@
           <li>All event types &amp; recurrence</li>
           <li>Pre-event reminders (up to 3 roles)</li>
           <li>Google Calendar sync</li>
-          <li>Up to 10 G-Cal integrations</li>
+          <li>Up to 5 G-Cal integrations</li>
           <li>Custom button labels</li>
         </ul>
         <a href="{{purchaseUrl}}" class="btn btn--primary" target="_blank" rel="noopener">⭐ Purchase Premium</a>

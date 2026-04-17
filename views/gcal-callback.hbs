@@ -35,7 +35,28 @@
         font-family:var(--font-mono);
         font-size:var(--text-sm);
         color:var(--color-text);
-      ">{{code}}</div>
+        position:relative;
+      " id="code-block">{{code}}</div>
+
+      <div style="margin-top:var(--space-3);text-align:right;">
+        <button
+          id="copy-btn"
+          onclick="copyCode()"
+          style="
+            background:var(--color-accent);
+            color:#fff;
+            border:none;
+            border-radius:var(--radius-md);
+            padding:var(--space-2) var(--space-5);
+            font-size:var(--text-sm);
+            font-family:var(--font-sans);
+            font-weight:600;
+            cursor:pointer;
+          "
+        >
+          📋 Copy Code
+        </button>
+      </div>
 
       <div class="callout callout--info reveal" style="margin-top:var(--space-6);">
         <span>📋</span>
@@ -69,3 +90,24 @@
 
   </div>
 </section>
+
+{{#if success}}
+<script>
+  function copyCode() {
+    const code = document.getElementById("code-block").innerText.trim();
+    const btn  = document.getElementById("copy-btn");
+    navigator.clipboard.writeText(code).then(() => {
+      btn.innerText = "✅ Copied!";
+      btn.style.background = "var(--color-success, #57f287)";
+      btn.style.color = "#000";
+      setTimeout(() => {
+        btn.innerText = "📋 Copy Code";
+        btn.style.background = "var(--color-accent)";
+        btn.style.color = "#fff";
+      }, 2500);
+    }).catch(() => {
+      btn.innerText = "❌ Copy failed — select manually";
+    });
+  }
+</script>
+{{/if}}
