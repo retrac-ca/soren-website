@@ -19,7 +19,6 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // ── Templating Engine (Handlebars) ───────────────────────────────────────────
-// Views live in /views, layout file is /views/layouts/main.hbs
 app.engine(
   "hbs",
   engine({
@@ -27,10 +26,7 @@ app.engine(
     defaultLayout: "main",
     layoutsDir: path.join(__dirname, "views/layouts"),
     partialsDir: path.join(__dirname, "views/partials"),
-    // ── Custom Helpers ──────────────────────────────────────────────────
     helpers: {
-      // eq: equality check used in templates for active nav states
-      // Usage: {{#if (eq activePage 'home')}}active{{/if}}
       eq: (a, b) => a === b,
     },
   })
@@ -42,13 +38,13 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 
 // ── Routes ───────────────────────────────────────────────────────────────────
-// Each page has its own route file in /routes/
-const homeRouter    = require("./routes/home");
-const featuresRouter= require("./routes/features");
-const setupRouter   = require("./routes/setup");
-const docsRouter    = require("./routes/docs");
-const privacyRouter = require("./routes/privacy");
-const termsRouter   = require("./routes/terms");
+const homeRouter     = require("./routes/home");
+const featuresRouter = require("./routes/features");
+const setupRouter    = require("./routes/setup");
+const docsRouter     = require("./routes/docs");
+const privacyRouter  = require("./routes/privacy");
+const termsRouter    = require("./routes/terms");
+const gcalRouter     = require("./routes/gcal");
 
 app.use("/",         homeRouter);
 app.use("/features", featuresRouter);
@@ -56,6 +52,7 @@ app.use("/setup",    setupRouter);
 app.use("/docs",     docsRouter);
 app.use("/privacy",  privacyRouter);
 app.use("/terms",    termsRouter);
+app.use("/gcal",     gcalRouter);
 
 // ── 404 fallback ─────────────────────────────────────────────────────────────
 app.use((req, res) => {

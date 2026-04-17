@@ -1,0 +1,71 @@
+{{!-- views/gcal-callback.hbs — Google OAuth callback result page --}}
+
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    {{#if success}}
+      <span class="section-eyebrow">Google Calendar</span>
+      <h1>Authorization successful!</h1>
+      <p>Copy the code below and paste it into <code>/gcalint verify</code> in your Discord server.</p>
+    {{else}}
+      <span class="section-eyebrow">Google Calendar</span>
+      <h1>Authorization failed</h1>
+      <p>Something went wrong during Google authorization. Please try running <code>/gcalint add</code> again.</p>
+    {{/if}}
+  </div>
+</section>
+
+<section class="section--sm section">
+  <div class="container" style="max-width:720px;">
+
+    {{#if success}}
+      <div class="callout callout--success reveal">
+        <span>✅</span>
+        <span>
+          <strong>Your authorization code:</strong>
+        </span>
+      </div>
+
+      <div style="
+        background:var(--color-surface);
+        border:1px solid var(--color-border);
+        border-radius:var(--radius-md);
+        padding:var(--space-5) var(--space-6);
+        margin-top:var(--space-4);
+        word-break:break-all;
+        font-family:var(--font-mono);
+        font-size:var(--text-sm);
+        color:var(--color-text);
+      ">{{code}}</div>
+
+      <div class="callout callout--info reveal" style="margin-top:var(--space-6);">
+        <span>📋</span>
+        <span>
+          Copy the entire code above, then go back to your Discord server and run
+          <code>/gcalint verify</code> and paste it in. You can close this tab afterwards.
+        </span>
+      </div>
+
+    {{else}}
+      <div class="callout callout--warning reveal">
+        <span>⚠️</span>
+        <span>
+          <strong>Error:</strong> {{error}}
+        </span>
+      </div>
+
+      <div class="callout callout--info reveal" style="margin-top:var(--space-4);">
+        <span>💡</span>
+        <span>
+          Head back to your Discord server and run <code>/gcalint add</code> to start the process again.
+          If this keeps happening, reach out in the
+          <a href="{{discordServer}}" target="_blank" rel="noopener">Soren support Discord</a>.
+        </span>
+      </div>
+    {{/if}}
+
+    <div style="margin-top:var(--space-10);text-align:center;">
+      <a href="/" class="btn btn--secondary">← Back to Soren</a>
+    </div>
+
+  </div>
+</section>

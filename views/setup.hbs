@@ -158,17 +158,10 @@
 
     <div class="grid-2 reveal" style="margin-bottom:var(--space-10);">
       <div class="card">
-        <h4>📤 Primary Sync (<code>/gcal</code>)</h4>
-        <p style="font-size:var(--text-sm);margin-top:var(--space-3);">
-          Connect one Google Calendar per server. Events created with <code>/newevent</code> are automatically pushed into it.
-          New events added directly in Google Calendar sync back to Discord every 15 minutes.
-        </p>
-      </div>
-      <div class="card">
         <h4>📥 G-Cal Integrations (<code>/gcalint</code>)</h4>
         <p style="font-size:var(--text-sm);margin-top:var(--space-3);">
           Connect multiple Google Calendars. Each one posts a weekly digest summary into its own Discord channel.
-          Great for syncing a shared team or community calendar. Free tier: up to 2 integrations; Premium: up to 10.
+          Great for syncing a shared team or community calendar. Free tier: up to 2 integrations; Premium: up to 5.
         </p>
       </div>
     </div>
@@ -211,7 +204,7 @@
           </p>
           <div class="callout callout--warning" style="margin-top:var(--space-4);">
             <span>⚠️</span>
-            <span>Never commit <code>google_credentials.json</code> to version control. It's already in Soren's <code>.gitignore</code>.</span>
+            <span>Never share or expose <code>google_credentials.json</code>. Keep it private and off of any public file sharing.</span>
           </div>
         </div>
       </div>
@@ -221,7 +214,7 @@
         <div class="setup-step-content">
           <h3>Connect in Discord</h3>
           <p>
-            Run <code>/gcalint add</code> (or <code>/gcal connect</code> for primary sync) and follow the prompts.
+            Run <code>/gcalint add</code> and follow the prompts.
             After authorizing with Google, your browser will show <em>"This site can't be reached"</em> — <strong>that's normal!</strong>
           </p>
           <p style="margin-top:var(--space-3);">
