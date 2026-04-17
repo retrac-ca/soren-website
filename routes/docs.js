@@ -37,34 +37,39 @@ router.get("/", (req, res) => {
         category: "Events",
         icon: "📅",
         commands: [
-          { name: "/newevent",      who: "Event Creator", description: "Create an event in a single command. Required: channel, title, start. Optional: timezone (autocomplete), recurrence (autocomplete), role (@mention picker), reminder (minutes), end, description, max_rsvp." },
-          { name: "/editevent",     who: "Event Creator", description: "Edit an existing event by its ID." },
-          { name: "/deleteevent",   who: "Event Creator", description: "Permanently delete an event and its embed." },
-          { name: "/cancelevent",   who: "Event Creator", description: "Soft-cancel an event (marks as cancelled without deleting)." },
-          { name: "/listevents",    who: "Everyone",      description: "View all upcoming events in this server, paginated." },
-          { name: "/myevents",      who: "Everyone",      description: "List all events you've RSVPed to (accepted or tentative) across the server." },
-          { name: "/eventbuttons",  who: "Event Creator", description: "Toggle the Tentative button on any event. Custom RSVP label renaming requires Premium." },
-        ],
-      },
-      {
-        category: "Google Calendar Sync",
-        icon: "📆",
-        commands: [
-          { name: "/gcal connect",    who: "Admins", description: "Connect a primary Google Calendar to push new /newevent events into." },
-          { name: "/gcal verify",     who: "Admins", description: "Complete the Google Calendar OAuth connection with your auth code." },
-          { name: "/gcal disconnect", who: "Admins", description: "Remove the primary Google Calendar connection." },
+          { name: "/newevent",          who: "Event Creator", description: "Create an event in a single command. Required: channel, title, start. Optional: timezone (autocomplete), recurrence (autocomplete), role (@mention picker), reminder (minutes), end, description, max_rsvp." },
+          { name: "/editeventdetails",  who: "Event Creator", description: "Edit an event's title and description by its ID." },
+          { name: "/editeventtime",     who: "Event Creator", description: "Edit an event's start and end time by its ID. Resets the reminder so it fires correctly for the new time." },
+          { name: "/editeventmentions", who: "Event Creator", description: "Edit the notify roles for an event by its ID." },
+          { name: "/deleteevent",       who: "Event Creator", description: "Permanently delete an event and its embed." },
+          { name: "/cancelevent",       who: "Event Creator", description: "Soft-cancel an event (marks as cancelled without deleting)." },
+          { name: "/listevents",        who: "Everyone",      description: "View all upcoming events in this server, paginated." },
+          { name: "/myevents",          who: "Everyone",      description: "List all events you've RSVPed to (accepted or tentative) across the server." },
+          { name: "/eventbuttons",      who: "Event Creator", description: "Toggle the Tentative button on any event. Custom RSVP label renaming requires Premium." },
         ],
       },
       {
         category: "G-Cal Integrations",
         icon: "🗓️",
         commands: [
-          { name: "/gcalint add",        who: "Admins", description: "Connect a Google Calendar for automatic weekly digest summaries." },
-          { name: "/gcalint verify",     who: "Admins", description: "Complete auth and pick which calendar to use from your account." },
-          { name: "/gcalint list",       who: "Admins", description: "View all connected calendars and their posting schedules." },
-          { name: "/gcalint remove",     who: "Admins", description: "Disconnect and remove a calendar integration." },
-          { name: "/gcalint pause",      who: "Admins", description: "Pause or resume auto-posting for a calendar." },
-          { name: "/gcalint post",       who: "Admins", description: "Manually trigger a summary post for a calendar right now." },
+          { name: "/gcalint add",       who: "Admins", description: "Connect a Google Calendar for automatic digest summaries and reminders. Walks through a 3-step setup wizard." },
+          { name: "/gcalint verify",    who: "Admins", description: "Complete OAuth and pick which calendar to use from your account." },
+          { name: "/gcalint list",      who: "Admins", description: "View all connected calendars and their posting schedules." },
+          { name: "/gcalint remove",    who: "Admins", description: "Disconnect and remove a calendar integration." },
+          { name: "/gcalint pause",     who: "Admins", description: "Pause or resume auto-posting for a calendar." },
+          { name: "/gcalint post",      who: "Admins", description: "Manually trigger a summary post for a calendar right now." },
+          { name: "/gcalint reminder",  who: "Admins", description: "Set the reminder offset for a calendar integration (15, 30, 60, or 1440 minutes before an event)." },
+          { name: "/gcalint reminders", who: "Admins", description: "Toggle reminders on or off for a specific calendar integration." },
+        ],
+      },
+      {
+        category: "Mod Logs",
+        icon: "📋",
+        commands: [
+          { name: "/modlogs setchannel", who: "Admins", description: "Set the channel where Soren posts structured audit logs for event and RSVP activity." },
+          { name: "/modlogs disable",    who: "Admins", description: "Disable mod log posting without removing the channel config." },
+          { name: "/modlogs resume",     who: "Admins", description: "Resume mod log posting to the previously configured channel." },
+          { name: "/modlogs status",     who: "Admins", description: "Check whether mod logs are enabled and which channel they're posting to." },
         ],
       },
     ],
@@ -91,8 +96,8 @@ router.get("/", (req, res) => {
         a: "Both are optional fields in /newevent. As you type in the timezone field, Discord will autocomplete matching options from a curated list first, then fall back to all IANA timezones for more specific searches. Recurrence shows 7 options — Single, Daily, Weekly, Bi-Weekly, Bi-Monthly, Monthly, and Custom — as a searchable autocomplete list."
       },
       {
-        q: "What is the G-Cal Integrations feature vs. Google Calendar Sync?",
-        a: "They're two separate systems. /gcal sync pushes events you create via /newevent into Google Calendar. G-Cal Integrations (/gcalint) reads from Google Calendar and posts weekly digest summaries into Discord — great for syncing a shared team calendar into your server. Free tier allows up to 2 integrations; Premium allows up to 10."
+        q: "What is the G-Cal Integrations feature?",
+        a: "G-Cal Integrations (/gcalint) connects a Google Calendar to your Discord server. Soren posts weekly digest summaries of upcoming events into a channel of your choice, and can fire reminders before GCal events. Free tier allows up to 2 integrations; Premium allows up to 5."
       },
       {
         q: "Can I notify multiple roles when a reminder fires?",
