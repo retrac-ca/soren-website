@@ -1,0 +1,54 @@
+{{!--
+  views/partials/roadmap-card.hbs
+  Reusable card for a single roadmap feature.
+  Used in views/roadmap.hbs via {{> roadmap-card}}
+--}}
+<div class="card card-hover reveal roadmap-card">
+
+  <!-- Top row: version badge + status pill -->
+  <div class="roadmap-card__meta">
+
+    <!-- Version badge -->
+    <span class="badge {{#if isV46}}badge--version-46{{else}}badge--version-50{{/if}}">
+      {{version}}
+    </span>
+
+    <!-- Status pill -->
+    {{#if isComplete}}
+      <span class="badge badge--complete">✅ Shipped</span>
+    {{else if isInProgress}}
+      <span class="badge badge--inprogress">🔨 In Progress</span>
+    {{else if isDeferred}}
+      <span class="badge badge--deferred">⏸ Deferred</span>
+    {{else}}
+      <span class="badge badge--planned">📋 Planned</span>
+    {{/if}}
+
+  </div>
+
+  <!-- Feature name -->
+  <h4 class="roadmap-card__name">{{name}}</h4>
+
+  <!-- Short description -->
+  <p class="roadmap-card__desc">{{shortDescription}}</p>
+
+  <!-- Bottom row: complexity + tier -->
+  <div class="roadmap-card__footer">
+
+    <!-- Complexity -->
+    <span class="roadmap-tag {{#if isEasy}}roadmap-tag--easy{{else if isMedium}}roadmap-tag--medium{{else}}roadmap-tag--hard{{/if}}">
+      {{#if isEasy}}● Easy{{else if isMedium}}● Medium{{else}}● Hard{{/if}}
+    </span>
+
+    <!-- Tier -->
+    {{#if tierBoth}}
+      <span class="roadmap-tag roadmap-tag--both">Free + Premium</span>
+    {{else if tierPremium}}
+      <span class="roadmap-tag roadmap-tag--premium">⭐ Premium</span>
+    {{else}}
+      <span class="roadmap-tag roadmap-tag--free">Free</span>
+    {{/if}}
+
+  </div>
+
+</div>

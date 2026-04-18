@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Event Duplication",
+    "version": "v4.6",
+    "status": "Planned",
+    "complexity": "Easy",
+    "tier": "Both",
+    "shortDescription": "Clone an existing event to a new date and time. All fields carry over — channel, roles, reminders, description, color. Creator sets the new start and end time.",
+    "priority": 1
+  },
+  {
+    "id": 2,
+    "name": "Close Signups Early",
+    "version": "v4.6",
+    "status": "Planned",
+    "complexity": "Easy",
+    "tier": "Both",
+    "shortDescription": "Set a time-based RSVP cutoff before the event starts. After the cutoff, RSVP buttons are disabled and late signups are rejected with an ephemeral message.",
+    "priority": 2
+  },
+  {
+    "id": 3,
+    "name": "Multiple Reminders Per Event",
+    "version": "v4.6",
+    "status": "Planned",
+    "complexity": "Medium",
+    "tier": "Both",
+    "shortDescription": "Set up to 3 reminder offsets per event on free, or up to 5 on premium. Each fires independently at the configured time before the event starts.",
+    "priority": 3
+  },
+  {
+    "id": 4,
+    "name": "Event Threads",
+    "version": "v4.6",
+    "status": "Planned",
+    "complexity": "Medium",
+    "tier": "Both",
+    "shortDescription": "Automatically create a thread on the event message when an event is posted. Free servers get a public thread. Premium servers get a private thread with RSVPs auto-added.",
+    "priority": 4
+  },
+  {
+    "id": 5,
+    "name": "Event Templates",
+    "version": "v5.0",
+    "status": "Planned",
+    "complexity": "Medium",
+    "tier": "Both",
+    "shortDescription": "Save a set of event defaults as a named template and use it with /newevent to pre-fill channel, roles, reminder offsets, embed color, and description boilerplate.",
+    "priority": 5
+  },
+  {
+    "id": 6,
+    "name": "Custom Reminder Messages",
+    "version": "v5.0",
+    "status": "Planned",
+    "complexity": "Medium",
+    "tier": "Premium",
+    "shortDescription": "Write your own reminder message text instead of the default Soren embed. Your custom message is sent in place of the generic countdown when the reminder fires.",
+    "priority": 6
+  },
+  {
+    "id": 7,
+    "name": "Attendee Role Auto-Assign",
+    "version": "v5.0",
+    "status": "Planned",
+    "complexity": "Medium",
+    "tier": "Premium",
+    "shortDescription": "Automatically assign a Discord role when a member RSVPs yes. The role is removed when they un-RSVP or switch to no or tentative.",
+    "priority": 7
+  },
+  {
+    "id": 8,
+    "name": "Waitlist System",
+    "version": "v5.0",
+    "status": "Planned",
+    "complexity": "Medium",
+    "tier": "Both",
+    "shortDescription": "When max RSVP is hit, overflow signups go to a waitlist. When an accepted attendee drops out, the next person on the waitlist is automatically promoted and notified.",
+    "priority": 8
+  },
+  {
+    "id": 9,
+    "name": "RSVP Insights",
+    "version": "v5.0",
+    "status": "Planned",
+    "complexity": "Hard",
+    "tier": "Both",
+    "shortDescription": "After an event ends, Soren posts an attendance report showing who showed up, who bailed, and the overall attendance rate. Tracks via voice channel presence or a check-in button fallback.",
+    "priority": 9
+  }
+]

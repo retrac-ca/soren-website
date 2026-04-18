@@ -23,7 +23,7 @@ module.exports = {
 
   // ── Links ──────────────────────────────────────────────────────────────────
   inviteUrl:      "https://discord.com/oauth2/authorize?client_id=1423474696783138839&permissions=17929878105152&integration_type=0&scope=bot",
-  discordServer:  "https://discord.gg/rrgds8nGUx",
+  discordServer:  "https://discord.gg/YBH2AD2Gdj",
   githubUrl:      "https://github.com/retrac-ca/soren",
   purchaseUrl:    "https://ko-fi.com/s/7cefffca89",
 
@@ -43,6 +43,7 @@ module.exports = {
     { label: "Features", href: "/features", icon: "✨" },
     { label: "Setup",    href: "/setup",    icon: "⚙️" },
     { label: "Docs",     href: "/docs",     icon: "📖" },
+    { label: "Roadmap",  href: "/roadmap",  icon: "🗺️" },
   ],
 
 };

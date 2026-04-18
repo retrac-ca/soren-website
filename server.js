@@ -45,6 +45,7 @@ const docsRouter     = require("./routes/docs");
 const privacyRouter  = require("./routes/privacy");
 const termsRouter    = require("./routes/terms");
 const gcalRouter     = require("./routes/gcal");
+const roadmapRouter  = require("./routes/roadmap");
 
 app.use("/",         homeRouter);
 app.use("/features", featuresRouter);
@@ -53,6 +54,7 @@ app.use("/docs",     docsRouter);
 app.use("/privacy",  privacyRouter);
 app.use("/terms",    termsRouter);
 app.use("/gcal",     gcalRouter);
+app.use("/roadmap",  roadmapRouter);
 
 // ── 404 fallback ─────────────────────────────────────────────────────────────
 app.use((req, res) => {

@@ -625,3 +625,167 @@
   .hero-description { margin-inline: auto; }
   .hero-visual { display: none; }  /* hide on small screens */
 }
+
+/* ════════════════════════════════════════════════════════════════════════════
+   ROADMAP PAGE
+   Append this block to the bottom of public/css/pages.css
+   ════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Roadmap Grid ────────────────────────────────────────────────────────── */
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-5);
+}
+
+/* ── Roadmap Card ────────────────────────────────────────────────────────── */
+.roadmap-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.roadmap-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.roadmap-card__name {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  margin: 0;
+}
+
+.roadmap-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  flex: 1;
+  margin: 0;
+}
+
+.roadmap-card__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-top: auto;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+}
+
+/* ── Version Badges ──────────────────────────────────────────────────────── */
+.badge--version-46 {
+  background: color-mix(in srgb, var(--color-accent) 15%, transparent);
+  color: var(--color-accent);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 30%, transparent);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.badge--version-50 {
+  background: color-mix(in srgb, var(--color-premium) 15%, transparent);
+  color: var(--color-premium);
+  border: 1px solid color-mix(in srgb, var(--color-premium) 30%, transparent);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+/* ── Status Badges ───────────────────────────────────────────────────────── */
+.badge--planned {
+  background: color-mix(in srgb, var(--color-text-muted) 12%, transparent);
+  color: var(--color-text-muted);
+  border: 1px solid color-mix(in srgb, var(--color-text-muted) 20%, transparent);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+}
+
+.badge--inprogress {
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  color: var(--color-accent);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+}
+
+.badge--complete {
+  background: color-mix(in srgb, #57f287 12%, transparent);
+  color: #57f287;
+  border: 1px solid color-mix(in srgb, #57f287 25%, transparent);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+}
+
+.badge--deferred {
+  background: color-mix(in srgb, var(--color-text-subtle) 12%, transparent);
+  color: var(--color-text-subtle);
+  border: 1px solid color-mix(in srgb, var(--color-text-subtle) 20%, transparent);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+}
+
+/* ── Complexity + Tier Tags ──────────────────────────────────────────────── */
+.roadmap-tag {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  letter-spacing: var(--tracking-wide);
+}
+
+.roadmap-tag--easy {
+  background: color-mix(in srgb, #57f287 10%, transparent);
+  color: #57f287;
+  border: 1px solid color-mix(in srgb, #57f287 20%, transparent);
+}
+
+.roadmap-tag--medium {
+  background: color-mix(in srgb, var(--color-premium) 10%, transparent);
+  color: var(--color-premium);
+  border: 1px solid color-mix(in srgb, var(--color-premium) 20%, transparent);
+}
+
+.roadmap-tag--hard {
+  background: color-mix(in srgb, #ed4245 10%, transparent);
+  color: #ed4245;
+  border: 1px solid color-mix(in srgb, #ed4245 20%, transparent);
+}
+
+.roadmap-tag--both {
+  background: color-mix(in srgb, #5865f2 10%, transparent);
+  color: #5865f2;
+  border: 1px solid color-mix(in srgb, #5865f2 20%, transparent);
+}
+
+.roadmap-tag--premium {
+  background: color-mix(in srgb, var(--color-premium) 10%, transparent);
+  color: var(--color-premium);
+  border: 1px solid color-mix(in srgb, var(--color-premium) 20%, transparent);
+}
+
+.roadmap-tag--free {
+  background: color-mix(in srgb, var(--color-text-muted) 10%, transparent);
+  color: var(--color-text-muted);
+  border: 1px solid color-mix(in srgb, var(--color-text-muted) 20%, transparent);
+}
+
+@media (max-width: 600px) {
+  .roadmap-grid { grid-template-columns: 1fr; }
+}
