@@ -46,4 +46,14 @@ module.exports = {
     { label: "Roadmap",  href: "/roadmap",  icon: "🗺️" },
   ],
 
+  // ── Contact ────────────────────────────────────────────────────────────────
+  contactEmail: "info@retrac.ca",
+
+  // ── Stats (update as the bot grows) ───────────────────────────────────────
+  activeServers: 5,
+
+  // ── Legal Dates (update when policy documents change) ─────────────────────
+  privacyLastUpdated: "April 6, 2025",
+  termsLastUpdated:   "April 6, 2025",
+
 };

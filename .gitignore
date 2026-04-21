@@ -140,6 +140,9 @@ vite.config.ts.timestamp-*
 
 # ── Soren Website ─────────────────────────────────────────────────────────────
 
+# Lockfile is not committed — Railway regenerates it on every build from package.json
+package-lock.json
+
 # OS junk
 .DS_Store
 Thumbs.db

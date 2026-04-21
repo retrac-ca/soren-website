@@ -11,12 +11,27 @@
 
 const express = require("express");
 const { engine } = require("express-handlebars");
-const path = require("path");
+const path    = require("path");
+const helmet  = require("helmet");
 
 const app = express();
 
 // ── Configuration ────────────────────────────────────────────────────────────
 const PORT = process.env.PORT || 3000;
+
+// ── Security Headers (helmet) ────────────────────────────────────────────────
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc:  ["'self'"],
+      scriptSrc:   ["'self'", "'unsafe-inline'"],
+      styleSrc:    ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+      fontSrc:     ["'self'", "https://fonts.gstatic.com"],
+      imgSrc:      ["'self'", "https://i.postimg.cc", "data:"],
+      connectSrc:  ["'self'"],
+    },
+  },
+}));
 
 // ── Templating Engine (Handlebars) ───────────────────────────────────────────
 app.engine(
@@ -35,7 +50,14 @@ app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "views"));
 
 // ── Static Files (CSS, JS, images) ──────────────────────────────────────────
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public"), {
+  maxAge: "1d",
+}));
+
+// ── Health Check ─────────────────────────────────────────────────────────────
+app.get("/health", (req, res) => {
+  res.status(200).json({ status: "ok", uptime: process.uptime() });
+});
 
 // ── Routes ───────────────────────────────────────────────────────────────────
 const homeRouter     = require("./routes/home");
@@ -59,6 +81,15 @@ app.use("/roadmap",  roadmapRouter);
 // ── 404 fallback ─────────────────────────────────────────────────────────────
 app.use((req, res) => {
   res.status(404).render("404", { title: "Page Not Found — Soren" });
+});
+
+// ── Global Error Handler ──────────────────────────────────────────────────────
+app.use((err, req, res, next) => {
+  console.error("Unhandled error:", err);
+  res.status(500).render("error", {
+    title:   "Server Error — Soren",
+    message: "Something went wrong on our end. Please try again later.",
+  });
 });
 
 // ── Start Server ─────────────────────────────────────────────────────────────

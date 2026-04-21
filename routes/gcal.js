@@ -14,8 +14,9 @@ const router  = express.Router();
 const config  = require("../config");
 
 router.get("/callback", (req, res) => {
-  const code  = req.query.code  || null;
-  const error = req.query.error || null;
+  // Clamp lengths to guard against oversized query strings
+  const code  = req.query.code  ? String(req.query.code).slice(0, 512)  : null;
+  const error = req.query.error ? String(req.query.error).slice(0, 256) : null;
 
   // Google denied access or user cancelled
   if (error || !code) {

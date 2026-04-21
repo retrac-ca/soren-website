@@ -10,9 +10,10 @@ const config  = require("../config");
 router.get("/", (req, res) => {
   res.render("home", {
     ...config,
-    title:       `${config.botName} — ${config.botTagline}`,
-    activePage:  "home",
-    isHome:      true,
+    title:        `${config.botName} — ${config.botTagline}`,
+    activePage:   "home",
+    isHome:       true,
+    activeServers: config.activeServers,
   });
 });
 

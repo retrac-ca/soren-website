@@ -1,0 +1,19 @@
+{{!-- views/error.hbs — Generic server error page --}}
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <span class="section-eyebrow">500 — Server Error</span>
+    <h1>Something went wrong.</h1>
+    <p>{{message}}</p>
+  </div>
+</section>
+
+<section class="section--sm section">
+  <div class="container" style="text-align:center;">
+    <a href="/" class="btn btn--primary">← Back to Home</a>
+    {{#if discordServer}}
+      <a href="{{discordServer}}" class="btn btn--secondary" target="_blank" rel="noopener">
+        Get Help on Discord
+      </a>
+    {{/if}}
+  </div>
+</section>

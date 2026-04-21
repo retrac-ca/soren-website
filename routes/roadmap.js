@@ -14,7 +14,18 @@ const config  = require("../config");
 
 router.get("/", (req, res) => {
   const roadmapPath = path.join(__dirname, "../roadmap.json");
-  const all = JSON.parse(fs.readFileSync(roadmapPath, "utf8"));
+
+  let all;
+  try {
+    all = JSON.parse(fs.readFileSync(roadmapPath, "utf8"));
+  } catch (err) {
+    console.error("Failed to load roadmap.json:", err);
+    return res.status(500).render("error", {
+      ...config,
+      title: `Roadmap Unavailable — ${config.botName}`,
+      message: "The roadmap couldn't be loaded. Please try again later.",
+    });
+  }
 
   // Sort by priority
   all.sort((a, b) => a.priority - b.priority);

@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
     ...config,
     title:       `Privacy Policy — ${config.botName}`,
     activePage:  "privacy",
-    lastUpdated: "April 6, 2025",
+    lastUpdated: config.privacyLastUpdated,
   });
 });
 

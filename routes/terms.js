@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
     ...config,
     title:       `Terms of Service — ${config.botName}`,
     activePage:  "terms",
-    lastUpdated: "April 6, 2025",
+    lastUpdated: config.termsLastUpdated,
   });
 });
 

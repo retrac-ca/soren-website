@@ -789,3 +789,62 @@
 @media (max-width: 600px) {
   .roadmap-grid { grid-template-columns: 1fr; }
 }
+
+/* ── Google Calendar Callback Page ──────────────────────────────────────── */
+.gcal-container {
+  max-width: 720px;
+}
+
+.gcal-code-block {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-5) var(--space-6);
+  margin-top: var(--space-4);
+  word-break: break-all;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  position: relative;
+}
+
+.gcal-copy-wrap {
+  margin-top: var(--space-3);
+  text-align: right;
+}
+
+.gcal-copy-btn {
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-5);
+  font-size: var(--text-sm);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.gcal-copy-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.gcal-copy-btn--success {
+  background: #57f287;
+  color: #000;
+}
+
+.gcal-info-callout {
+  margin-top: var(--space-6);
+}
+
+.gcal-error-info {
+  margin-top: var(--space-4);
+}
+
+.gcal-back-wrap {
+  margin-top: var(--space-10);
+  text-align: center;
+}

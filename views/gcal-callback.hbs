@@ -15,50 +15,23 @@
 </section>
 
 <section class="section--sm section">
-  <div class="container" style="max-width:720px;">
+  <div class="container gcal-container">
 
     {{#if success}}
       <div class="callout callout--success reveal">
         <span>✅</span>
-        <span>
-          <strong>Your authorization code:</strong>
-        </span>
+        <span><strong>Your authorization code:</strong></span>
       </div>
 
-      <div style="
-        background:var(--color-surface);
-        border:1px solid var(--color-border);
-        border-radius:var(--radius-md);
-        padding:var(--space-5) var(--space-6);
-        margin-top:var(--space-4);
-        word-break:break-all;
-        font-family:var(--font-mono);
-        font-size:var(--text-sm);
-        color:var(--color-text);
-        position:relative;
-      " id="code-block">{{code}}</div>
+      <div class="gcal-code-block" id="code-block">{{code}}</div>
 
-      <div style="margin-top:var(--space-3);text-align:right;">
-        <button
-          id="copy-btn"
-          onclick="copyCode()"
-          style="
-            background:var(--color-accent);
-            color:#fff;
-            border:none;
-            border-radius:var(--radius-md);
-            padding:var(--space-2) var(--space-5);
-            font-size:var(--text-sm);
-            font-family:var(--font-sans);
-            font-weight:600;
-            cursor:pointer;
-          "
-        >
+      <div class="gcal-copy-wrap">
+        <button id="copy-btn" class="gcal-copy-btn" onclick="copyCode()">
           📋 Copy Code
         </button>
       </div>
 
-      <div class="callout callout--info reveal" style="margin-top:var(--space-6);">
+      <div class="callout callout--info reveal gcal-info-callout">
         <span>📋</span>
         <span>
           Copy the entire code above, then go back to your Discord server and run
@@ -74,7 +47,7 @@
         </span>
       </div>
 
-      <div class="callout callout--info reveal" style="margin-top:var(--space-4);">
+      <div class="callout callout--info reveal gcal-error-info">
         <span>💡</span>
         <span>
           Head back to your Discord server and run <code>/gcalint add</code> to start the process again.
@@ -84,7 +57,7 @@
       </div>
     {{/if}}
 
-    <div style="margin-top:var(--space-10);text-align:center;">
+    <div class="gcal-back-wrap">
       <a href="/" class="btn btn--secondary">← Back to Soren</a>
     </div>
 
@@ -96,17 +69,20 @@
   function copyCode() {
     const code = document.getElementById("code-block").innerText.trim();
     const btn  = document.getElementById("copy-btn");
+    btn.disabled = true;
+    btn.innerText = "⏳ Copying…";
+
     navigator.clipboard.writeText(code).then(() => {
       btn.innerText = "✅ Copied!";
-      btn.style.background = "var(--color-success, #57f287)";
-      btn.style.color = "#000";
+      btn.classList.add("gcal-copy-btn--success");
       setTimeout(() => {
         btn.innerText = "📋 Copy Code";
-        btn.style.background = "var(--color-accent)";
-        btn.style.color = "#fff";
+        btn.classList.remove("gcal-copy-btn--success");
+        btn.disabled = false;
       }, 2500);
     }).catch(() => {
       btn.innerText = "❌ Copy failed — select manually";
+      btn.disabled = false;
     });
   }
 </script>
