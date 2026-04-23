@@ -73,7 +73,7 @@
     "id": 8,
     "name": "Waitlist System",
     "version": "v5.0",
-    "status": "Planned",
+    "status": "Complete",
     "complexity": "Medium",
     "tier": "Both",
     "shortDescription": "When max RSVP is hit, overflow signups go to a waitlist. When an accepted attendee drops out, the next person on the waitlist is automatically promoted and notified.",

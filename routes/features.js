@@ -20,6 +20,7 @@ router.get("/", (req, res) => {
       { feature: "RSVP names shown per event",      free: "50",               premium: "100" },
       { feature: "Embed color choices",             free: "3 colors",         premium: "10 colors" },
       { feature: "Recurring events",                free: "✅",                premium: "✅" },
+      { feature: "RSVP waitlist",                   free: "✅",                premium: "✅" },
       { feature: "Google Calendar sync",            free: "✅",                premium: "✅" },
       { feature: "G-Cal integrations",              free: "Up to 2",          premium: "Up to 5" },
       { feature: "Mention & reminder notifications",free: "1 role",           premium: "Up to 3 roles" },

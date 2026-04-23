@@ -109,7 +109,11 @@ router.get("/", (req, res) => {
       },
       {
         q: "Can I set a cap on how many people can RSVP?",
-        a: "Yes — use the max_rsvp field in /newevent to set a cap on accepted RSVPs for that event."
+        a: "Yes — use the max_rsvp field in /newevent to set a cap on accepted RSVPs. When the cap is hit, Soren automatically offers a waitlist to anyone who tries to accept. See 'How does the waitlist work?' below."
+      },
+      {
+        q: "How does the waitlist work?",
+        a: "When an event is full, anyone who clicks Accept sees an ephemeral message with a '📋 Join Waitlist' button. Clicking it queues them up and tells them their position in line. When an accepted attendee drops out, Soren automatically promotes the next person in the queue and sends them a DM so they can head back to the event and claim their spot. No commands needed — it's fully automatic."
       },
       {
         q: "Is Premium per-server or per-account?",
