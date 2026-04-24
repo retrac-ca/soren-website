@@ -164,6 +164,14 @@
               <h4 style="margin-bottom:var(--space-2);">waitlist</h4>
               <p style="font-size:var(--text-sm);">Tracks users queued for full events. Ordered by insertion time (first-in, first-out). Cleaned up automatically when an event is deleted.</p>
             </div>
+            <div class="card card--flat">
+              <h4 style="margin-bottom:var(--space-2);">gcal_reminders</h4>
+              <p style="font-size:var(--text-sm);">Tracks which Google Calendar events have already triggered a reminder, preventing duplicate notifications from firing.</p>
+            </div>
+            <div class="card card--flat">
+              <h4 style="margin-bottom:var(--space-2);">modlogs_config</h4>
+              <p style="font-size:var(--text-sm);">Stores the mod log channel configuration set via <code>/modlogs setchannel</code>, including enabled/disabled state.</p>
+            </div>
           </div>
         </div>
 

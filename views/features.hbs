@@ -65,7 +65,7 @@
         <h4>G-Cal Integrations</h4>
         <p>
           Connect multiple Google Calendars, each posting weekly digest summaries into their own Discord channel.
-          Supports ◀ ▶ pagination for calendars with lots of events. Free tier allows up to 2 integrations.
+          Supports ◀ ▶ pagination for calendars with lots of events. Free tier: up to 2 integrations; Premium: up to 5.
         </p>
       </div>
 
@@ -103,6 +103,16 @@
           Set a cap on accepted RSVPs with <code>max_rsvp</code> in <code>/newevent</code>. When the event is full,
           Soren prompts overflow signups to join the waitlist and shows them their position in line.
           When a spot opens up, the next person in the queue gets a DM automatically.
+        </p>
+      </div>
+
+      <div class="card card-hover reveal reveal-delay-2">
+        <div class="feature-icon">⏱️</div>
+        <h4>RSVP Cutoff Time</h4>
+        <p>
+          Set a hard deadline for RSVPs using the <code>cutoff</code> field in <code>/newevent</code>.
+          After the cutoff time, the Accept and Tentative buttons are disabled — no late signups,
+          no manual enforcement needed.
         </p>
       </div>
 

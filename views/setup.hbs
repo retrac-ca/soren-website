@@ -151,8 +151,8 @@
       <span class="section-eyebrow">Optional</span>
       <h2>Google Calendar Integration</h2>
       <p style="font-size:var(--text-lg);">
-        Soren has two separate Google Calendar features. Neither is required — the core event system
-        works completely without Google.
+        Connect your Google Calendars directly to Discord. Soren handles the entire authorization
+        process — no setup outside of Discord required.
       </p>
     </div>
 
@@ -171,10 +171,10 @@
       <div class="setup-step reveal">
         <div class="step-number">1</div>
         <div class="setup-step-content">
-          <h3>Create a Google Cloud project</h3>
+          <h3>Run <code>/gcalint add</code> in Discord</h3>
           <p>
-            Go to <a href="https://console.cloud.google.com/" target="_blank" rel="noopener">Google Cloud Console</a>
-            and create a new project (or use an existing one). Name it anything — e.g. <code>Soren</code>.
+            In your server, run <code>/gcalint add</code>. Soren's built-in wizard will walk you through the rest —
+            just follow the prompts it sends you.
           </p>
         </div>
       </div>
@@ -182,10 +182,11 @@
       <div class="setup-step reveal">
         <div class="step-number">2</div>
         <div class="setup-step-content">
-          <h3>Enable the Google Calendar API</h3>
+          <h3>Authorize with Google</h3>
           <p>
-            In your project, go to <strong>APIs &amp; Services → Library</strong>.
-            Search for <strong>Google Calendar API</strong> and click <strong>Enable</strong>.
+            Soren will send you an authorization link. Click it and sign in with the Google account
+            that owns the calendar you want to connect. After approving access, you'll be redirected
+            to the Soren website where your authorization code will be displayed automatically.
           </p>
         </div>
       </div>
@@ -193,34 +194,18 @@
       <div class="setup-step reveal">
         <div class="step-number">3</div>
         <div class="setup-step-content">
-          <h3>Create OAuth credentials</h3>
+          <h3>Complete the connection in Discord</h3>
           <p>
-            Go to <strong>APIs &amp; Services → Credentials → Create Credentials → OAuth client ID</strong>.
-            Choose <strong>Web application</strong> as the type.
-            Under <strong>Authorized redirect URIs</strong>, add: <code>http://localhost</code>
+            Copy the code shown on the Soren website and paste it into <code>/gcalint verify</code> in Discord.
+            A calendar picker will appear — select which calendar to connect and you're done.
           </p>
-          <p style="margin-top:var(--space-3);">
-            Download the JSON file, rename it <code>google_credentials.json</code>, and place it in the Soren bot's root folder.
-          </p>
-          <div class="callout callout--warning" style="margin-top:var(--space-4);">
-            <span>⚠️</span>
-            <span>Never share or expose <code>google_credentials.json</code>. Keep it private and off of any public file sharing.</span>
+          <div class="callout callout--success" style="margin-top:var(--space-4);">
+            <span>✅</span>
+            <span>
+              Once connected, Soren will automatically post weekly digest summaries to your chosen channel
+              and fire reminders before upcoming events.
+            </span>
           </div>
-        </div>
-      </div>
-
-      <div class="setup-step reveal">
-        <div class="step-number">4</div>
-        <div class="setup-step-content">
-          <h3>Connect in Discord</h3>
-          <p>
-            Run <code>/gcalint add</code> and follow the prompts.
-            After authorizing with Google, your browser will show <em>"This site can't be reached"</em> — <strong>that's normal!</strong>
-          </p>
-          <p style="margin-top:var(--space-3);">
-            Copy the <code>code=</code> value from the browser URL bar and paste it into <code>/gcalint verify &lt;code&gt;</code>.
-            A calendar picker will appear — select which calendar to connect.
-          </p>
         </div>
       </div>
 
