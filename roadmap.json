@@ -36,7 +36,7 @@
     "status": "Complete",
     "complexity": "Medium",
     "tier": "Both",
-    "shortDescription": "Automatically create a thread on the event message when an event is posted. Free servers get a public thread. Premium servers get a private thread with RSVPs auto-added.",
+    "shortDescription": "Automatically create a public discussion thread on the event message when it's posted. The thread archives when the event ends or is cancelled, gets a fresh thread for each recurring occurrence, and is permanently removed when the event is deleted.",
     "priority": 4
   },
   {

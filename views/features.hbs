@@ -46,7 +46,7 @@
         <h4>Configurable Reminders</h4>
         <p>
           Set a reminder offset directly in <code>/newevent</code> — 15 min, 30 min, 1 hour, 2 hours, or a custom number of minutes.
-          Soren pings the notify role and all accepted/tentative RSVPers. Tracked in the DB so they survive bot restarts.
+          Soren pings the configured notify role(s). Tracked in the DB so they survive bot restarts.
         </p>
       </div>
 
@@ -55,8 +55,8 @@
         <h4>Recurring Events</h4>
         <p>
           Daily, weekly, bi-weekly, bi-monthly, monthly, or a custom day interval — selected right in the
-          <code>/newevent</code> command via autocomplete. After the reminder fires, Soren automatically
-          advances the event to its next occurrence.
+          <code>/newevent</code> command via autocomplete. After each occurrence ends, Soren automatically
+          closes the old embed, advances to the next occurrence, and posts a fresh event.
         </p>
       </div>
 
