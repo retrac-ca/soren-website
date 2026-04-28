@@ -23,10 +23,10 @@
     "id": 3,
     "name": "Multiple Reminders Per Event",
     "version": "v4.6",
-    "status": "Planned",
+    "status": "Complete",
     "complexity": "Medium",
     "tier": "Both",
-    "shortDescription": "Set up to 3 reminder offsets per event on free, or up to 5 on premium. Each fires independently at the configured time before the event starts.",
+    "shortDescription": "Set up to 2 reminder times per event on free, or up to 5 on premium — configured in /newevent or edited any time with /eventreminders. Each reminder fires independently at its configured offset before the event starts.",
     "priority": 3
   },
   {

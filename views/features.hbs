@@ -43,10 +43,12 @@
 
       <div class="card card-hover reveal reveal-delay-1">
         <div class="feature-icon">⏰</div>
-        <h4>Configurable Reminders</h4>
+        <h4>Multiple Reminders Per Event</h4>
         <p>
-          Set a reminder offset directly in <code>/newevent</code> — 15 min, 30 min, 1 hour, 2 hours, or a custom number of minutes.
-          Soren pings the configured notify role(s). Tracked in the DB so they survive bot restarts.
+          Set up to 2 reminder times per event on the free tier, or up to 5 on Premium — configured in <code>/newevent</code>
+          or adjusted at any time with <code>/eventreminders</code>. Common presets (15 min, 30 min, 1 hour, 1 day) appear
+          via autocomplete; any number of minutes works. Each reminder fires independently and pings the configured notify
+          role(s). All reminders are tracked in the database and survive bot restarts.
         </p>
       </div>
 
@@ -159,11 +161,11 @@
           <li>50 RSVP names shown per event</li>
           <li>3 embed color choices</li>
           <li>All recurrence types</li>
-          <li>Pre-event reminders (1 role)</li>
+          <li>Up to 2 reminders per event (1 notify role)</li>
           <li>Google Calendar sync</li>
           <li>Up to 2 G-Cal integrations</li>
           <li class="disabled">Custom button labels</li>
-          <li class="disabled">More events, RSVPs &amp; colors</li>
+          <li class="disabled">More events, RSVPs, colors &amp; reminders</li>
         </ul>
         <a href="{{inviteUrl}}" class="btn btn--secondary" target="_blank" rel="noopener">
           Add to Discord — Free
@@ -188,7 +190,7 @@
           <li>100 RSVP names shown per event</li>
           <li>10 embed color choices</li>
           <li>All recurrence types</li>
-          <li>Pre-event reminders (up to 3 roles)</li>
+          <li>Up to 5 reminders per event (up to 3 notify roles)</li>
           <li>Google Calendar sync</li>
           <li>Up to 5 G-Cal integrations</li>
           <li>Custom button labels</li>

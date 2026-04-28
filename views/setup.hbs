@@ -101,7 +101,9 @@
               <tr><td><code>timezone</code></td><td>Optional</td><td>Autocompletes from a curated list, then falls back to all IANA timezones</td></tr>
               <tr><td><code>recurrence</code></td><td>Optional</td><td>Single, Daily, Weekly, Bi-Weekly, Bi-Monthly, Monthly, or Custom — searchable autocomplete</td></tr>
               <tr><td><code>role</code></td><td>Optional</td><td>The role to ping for reminders — native Discord @mention picker</td></tr>
-              <tr><td><code>reminder</code></td><td>Optional</td><td>Minutes before the event to send the reminder (e.g. <code>30</code> for 30 minutes)</td></tr>
+              <tr><td><code>reminder</code></td><td>Optional</td><td>First reminder — minutes before start (e.g. <code>30</code>). Defaults to 15 minutes.</td></tr>
+              <tr><td><code>reminder2</code></td><td>Optional</td><td>Second reminder — minutes before start. Free tier supports up to 2 reminders total.</td></tr>
+              <tr><td><code>reminder3–5</code></td><td>Optional ⭐</td><td>Third through fifth reminders — Premium only. Up to 5 reminders per event on Premium.</td></tr>
               <tr><td><code>end</code></td><td>Optional</td><td>End time for the event</td></tr>
               <tr><td><code>description</code></td><td>Optional</td><td>Additional details shown in the event embed</td></tr>
               <tr><td><code>max_rsvp</code></td><td>Optional</td><td>Cap the number of accepted RSVPs for the event</td></tr>
@@ -127,14 +129,15 @@
           <ul style="margin-top:var(--space-3);display:flex;flex-direction:column;gap:var(--space-2);">
             <li><code>/listevents</code> — View all upcoming events in the server, paginated.</li>
             <li><code>/myevents</code> — See every event you've RSVPed to (accepted or tentative).</li>
+            <li><code>/eventreminders</code> — Edit the reminder schedule for an event after it's been created (2 per event free, 5 premium).</li>
             <li><code>/eventbuttons</code> — Toggle the Tentative button or rename RSVP labels <strong>(Premium)</strong>.</li>
             <li><code>/premium</code> — View the free vs. premium feature comparison directly in Discord.</li>
           </ul>
           <div class="callout callout--info" style="margin-top:var(--space-4);">
             <span>⭐</span>
             <span>
-              <strong>Premium reminder tip:</strong> Free servers can notify 1 role per event reminder.
-              Upgrade to Premium to notify up to 3 roles — great for servers with multiple member groups.
+              <strong>Premium tip:</strong> Free servers support up to 2 reminder times and 1 notify role per event.
+              Premium unlocks up to 5 reminder times and up to 3 notify roles. Use <code>/eventreminders</code> to adjust a reminder schedule at any time after the event is created.
             </span>
           </div>
         </div>
