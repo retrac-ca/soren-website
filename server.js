@@ -11,20 +11,27 @@
 
 const express = require("express");
 const { engine } = require("express-handlebars");
+const crypto  = require("crypto");
 const path    = require("path");
 const helmet  = require("helmet");
+const config  = require("./config");
 
 const app = express();
 
 // ── Configuration ────────────────────────────────────────────────────────────
 const PORT = process.env.PORT || 3000;
 
+app.use((req, res, next) => {
+  res.locals.cspNonce = crypto.randomBytes(16).toString("base64");
+  next();
+});
+
 // ── Security Headers (helmet) ────────────────────────────────────────────────
 app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       defaultSrc:  ["'self'"],
-      scriptSrc:   ["'self'", "'unsafe-inline'"],
+      scriptSrc:   ["'self'", (req, res) => `'nonce-${res.locals.cspNonce}'`],
       styleSrc:    ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
       fontSrc:     ["'self'", "https://fonts.gstatic.com"],
       imgSrc:      ["'self'", "https://i.postimg.cc", "data:"],
@@ -48,6 +55,12 @@ app.engine(
 );
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "views"));
+
+app.use((req, res, next) => {
+  const cleanPath = req.path === "/" ? "" : req.path.replace(/\/$/, "");
+  res.locals.canonicalUrl = `${config.siteUrl}${cleanPath}`;
+  next();
+});
 
 // ── Static Files (CSS, JS, images) ──────────────────────────────────────────
 app.use(express.static(path.join(__dirname, "public"), {

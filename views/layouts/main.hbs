@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#D4570A" />
   <meta name="description" content="{{botDescription}}" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="{{canonicalUrl}}" />
   <title>{{title}}</title>
 
   <!-- ── Open Graph / Social Preview ─────────────────────────────────── -->
@@ -49,10 +51,10 @@
   {{> footer}}
 
   <!-- ── Theme Toggle Script ───────────────────────────────────────────── -->
-  <script src="/js/theme.js"></script>
+  <script src="/js/theme.js" nonce="{{cspNonce}}"></script>
 
   <!-- ── Page Interaction Scripts ──────────────────────────────────────── -->
-  <script src="/js/main.js"></script>
+  <script src="/js/main.js" nonce="{{cspNonce}}"></script>
 
 </body>
 </html>

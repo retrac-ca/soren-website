@@ -26,7 +26,7 @@
       <div class="gcal-code-block" id="code-block">{{code}}</div>
 
       <div class="gcal-copy-wrap">
-        <button id="copy-btn" class="gcal-copy-btn" onclick="copyCode()">
+        <button id="copy-btn" class="gcal-copy-btn" type="button">
           📋 Copy Code
         </button>
       </div>
@@ -65,7 +65,9 @@
 </section>
 
 {{#if success}}
-<script>
+<script nonce="{{cspNonce}}">
+  const copyButton = document.getElementById("copy-btn");
+
   function copyCode() {
     const code = document.getElementById("code-block").innerText.trim();
     const btn  = document.getElementById("copy-btn");
@@ -84,6 +86,10 @@
       btn.innerText = "❌ Copy failed — select manually";
       btn.disabled = false;
     });
+  }
+
+  if (copyButton) {
+    copyButton.addEventListener("click", copyCode);
   }
 </script>
 {{/if}}

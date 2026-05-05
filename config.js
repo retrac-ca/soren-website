@@ -17,6 +17,7 @@ module.exports = {
   botVersion:     "4.6 Beta",
   botTagline:     "The calendar & events bot built for communities.",
   botDescription: "Create events, manage RSVPs, and sync with Google Calendar — all inside Discord. Built for clans, guilds, and communities who want full ownership of their events.",
+  siteUrl:        "https://soren.retrac.ca",
   supportUrl:     "https://soren.retrac.ca",
   creatorName:    "Toadle",
   creatorGithub:  "https://github.com/retrac-ca/soren",
