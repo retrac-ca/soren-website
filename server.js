@@ -31,11 +31,11 @@ app.use(helmet({
   contentSecurityPolicy: {
     directives: {
       defaultSrc:  ["'self'"],
-      scriptSrc:   ["'self'", (req, res) => `'nonce-${res.locals.cspNonce}'`],
+      scriptSrc:   ["'self'", (req, res) => `'nonce-${res.locals.cspNonce}'`, "https://www.googletagmanager.com", "https://connect.facebook.net"],
       styleSrc:    ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
       fontSrc:     ["'self'", "https://fonts.gstatic.com"],
-      imgSrc:      ["'self'", "https://i.postimg.cc", "data:"],
-      connectSrc:  ["'self'"],
+      imgSrc:      ["'self'", "https://i.postimg.cc", "https://www.facebook.com", "data:"],
+      connectSrc:  ["'self'", "https://www.google-analytics.com", "https://www.facebook.com"],
     },
   },
 }));
