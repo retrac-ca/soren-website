@@ -30,7 +30,7 @@
   /* Text */
   --color-text:           #F0EDE8;   /* Primary body text — warm white */
   --color-text-muted:     #9A9490;   /* Secondary / helper text */
-  --color-text-subtle:    #5E5A56;   /* Disabled / placeholder text */
+  --color-text-subtle:    #5E5A56;   /* Disabled / subtle text */
   --color-text-inverse:   #0F0F0F;   /* Text on light backgrounds */
 
   /* Status / Semantic */
@@ -70,7 +70,7 @@
   /* Text */
   --color-text:           #1A1714;   /* Deep warm black */
   --color-text-muted:     #6B6560;   /* Secondary text */
-  --color-text-subtle:    #A09890;   /* Placeholder / disabled */
+  --color-text-subtle:    #A09890;   /* Disabled / subtle text */
   --color-text-inverse:   #FAF8F5;   /* Text on dark backgrounds */
 
   /* Status / Semantic */
