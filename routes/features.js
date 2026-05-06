@@ -22,7 +22,7 @@ router.get("/", (req, res) => {
       name: "Soren",
       applicationCategory: "BusinessApplication",
       operatingSystem: "Discord",
-      url: `${config.siteUrl}/features`,
+      url: config.siteUrl,
       description: "Discord calendar and event bot with RSVPs, reminders, recurring events, waitlists, Google Calendar sync, and ICS exports.",
       offers: [
         { "@type": "Offer", price: "0", priceCurrency: "CAD", name: "Free" },

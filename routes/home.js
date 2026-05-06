@@ -23,7 +23,7 @@ router.get("/", (req, res) => {
       "@graph": [
         {
           "@type": "WebSite",
-          "@id": `${config.siteUrl}/#website`,
+          "@id": `${config.siteUrl}#website`,
           url: config.siteUrl,
           name: "Soren",
           description: config.metaDescription,
@@ -31,7 +31,7 @@ router.get("/", (req, res) => {
         },
         {
           "@type": "SoftwareApplication",
-          "@id": `${config.siteUrl}/#software`,
+          "@id": `${config.siteUrl}#software`,
           name: "Soren",
           applicationCategory: "BusinessApplication",
           operatingSystem: "Discord",
@@ -54,7 +54,7 @@ router.get("/", (req, res) => {
         },
         {
           "@type": "Organization",
-          "@id": `${config.siteUrl}/#organization`,
+          "@id": `${config.siteUrl}#organization`,
           name: "Soren",
           url: config.siteUrl,
           logo: config.ogImage,

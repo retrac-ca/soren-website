@@ -20,16 +20,16 @@ router.get("/", (req, res) => {
       "@graph": [
         {
           "@type": "WebPage",
-          "@id": `${config.siteUrl}/discord-calendar-bot#webpage`,
-          url: `${config.siteUrl}/discord-calendar-bot`,
+          "@id": `${config.siteUrl}#discord-calendar-bot`,
+          url: config.siteUrl,
           name: "Discord Calendar Bot for Events, RSVPs & Reminders",
           description: "A search-focused guide to Soren as a Discord calendar bot for communities.",
-          isPartOf: { "@id": `${config.siteUrl}/#website` },
-          about: { "@id": `${config.siteUrl}/#software` },
+          isPartOf: { "@id": `${config.siteUrl}#website` },
+          about: { "@id": `${config.siteUrl}#software` },
         },
         {
           "@type": "SoftwareApplication",
-          "@id": `${config.siteUrl}/#software`,
+          "@id": `${config.siteUrl}#software`,
           name: "Soren",
           applicationCategory: "BusinessApplication",
           operatingSystem: "Discord",
@@ -78,7 +78,7 @@ router.get("/", (req, res) => {
         },
         {
           "@type": "Organization",
-          "@id": `${config.siteUrl}/#organization`,
+          "@id": `${config.siteUrl}#organization`,
           name: "Soren",
           url: config.siteUrl,
           logo: config.ogImage,

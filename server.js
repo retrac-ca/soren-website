@@ -58,8 +58,7 @@ app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "views"));
 
 app.use((req, res, next) => {
-  const cleanPath = req.path === "/" ? "" : req.path.replace(/\/$/, "");
-  res.locals.canonicalUrl = `${config.siteUrl}${cleanPath}`;
+  res.locals.canonicalUrl = config.siteUrl;
   next();
 });
 

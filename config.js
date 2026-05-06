@@ -20,8 +20,9 @@ module.exports = {
   metaDescription: "Soren is a Discord calendar bot for events, RSVPs, recurring schedules, reminders, Google Calendar sync, waitlists, and community event management.",
   metaKeywords: "Discord calendar bot, Discord event bot, Discord RSVP bot, Google Calendar Discord bot, Discord reminders, community calendar bot",
   robots:         "index, follow",
-  siteUrl:        "https://soren.retrac.ca",
-  supportUrl:     "https://soren.retrac.ca",
+  siteUrl:        "https://retrac.ca/soren",
+  appUrl:         "https://soren.retrac.ca",
+  supportUrl:     "https://retrac.ca/soren",
   creatorName:    "Toadle",
   creatorGithub:  "https://github.com/retrac-ca/soren",
 
@@ -40,7 +41,7 @@ module.exports = {
   ogTitle:        "Soren — Discord Events & Calendar Bot",
   ogDescription:  "Create events, manage RSVPs, and sync with Google Calendar — all inside Discord. Built for clans, guilds, and communities.",
   ogImage:        "https://i.postimg.cc/brwRqpwb/Soren-Regular-Logo.jpg",
-  ogUrl:          "https://soren.retrac.ca",
+  ogUrl:          "https://retrac.ca/soren",
 
   // ── Navigation Links ────────────────────────────────────────────────────────
   navLinks: [

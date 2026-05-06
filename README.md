@@ -2,6 +2,10 @@
 
 Official website for the **Soren** Discord Calendar & Events Bot.
 
+Public marketing URL: `https://retrac.ca/soren`
+
+Underlying app and deployment endpoint: `https://soren.retrac.ca`
+
 Built with Node.js + Express + Handlebars. Designed to grow — the same server can host a dashboard later without rewriting anything.
 
 ---
@@ -59,6 +63,8 @@ Open it and fill in your real values:
 module.exports = {
   botName:       "Soren",
   botVersion:    "1.2",
+  siteUrl:       "https://retrac.ca/soren",
+  appUrl:        "https://soren.retrac.ca",
   inviteUrl:     "https://discord.com/oauth2/authorize?...",  // ← your real invite link
   discordServer: "https://discord.gg/...",                    // ← your support server
   githubUrl:     "https://github.com/retrac-ca/soren",
