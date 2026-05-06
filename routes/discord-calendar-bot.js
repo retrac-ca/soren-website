@@ -76,6 +76,14 @@ router.get("/", (req, res) => {
             },
           ],
         },
+        {
+          "@type": "Organization",
+          "@id": `${config.siteUrl}/#organization`,
+          name: "Soren",
+          url: config.siteUrl,
+          logo: config.ogImage,
+          sameAs: [config.githubUrl, config.topggVoteUrl],
+        },
       ],
     },
   });

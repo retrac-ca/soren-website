@@ -58,7 +58,7 @@ router.get("/", (req, res) => {
           name: "Soren",
           url: config.siteUrl,
           logo: config.ogImage,
-          sameAs: [config.githubUrl],
+          sameAs: [config.githubUrl, config.topggVoteUrl],
         },
       ],
     },
