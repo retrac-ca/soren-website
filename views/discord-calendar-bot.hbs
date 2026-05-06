@@ -1,0 +1,120 @@
+{{!-- Search-focused landing page for "Discord calendar bot" --}}
+
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <span class="section-eyebrow">Discord Calendar Bot</span>
+    <h1>Discord calendar bot for events, RSVPs, reminders, and Google Calendar sync</h1>
+    <p>Soren turns your Discord server into a working community calendar with slash-command event creation, live RSVP buttons, recurring schedules, waitlists, reminders, and optional Google Calendar integrations.</p>
+    <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;margin-top:var(--space-6);">
+      <a href="{{inviteUrl}}" class="btn btn--primary btn--large" target="_blank" rel="noopener">Add Soren to Discord</a>
+      <a href="/setup" class="btn btn--secondary btn--large">Read the setup guide</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Why Soren</span>
+      <h2>A Discord event calendar built for active communities</h2>
+      <p>Most servers need more than a static calendar link. Soren keeps the entire event workflow inside Discord so members can discover, RSVP, get reminded, and show up without leaving the server.</p>
+    </div>
+
+    <div class="grid-2" style="gap:var(--space-5);">
+      <div class="card card-hover reveal reveal-delay-1">
+        <div class="feature-icon">📅</div>
+        <h4>Calendar-style event management in Discord</h4>
+        <p>Create events with <code>/newevent</code>, publish them to any channel, add descriptions, start and end times, timezone support, notify roles, recurrence, RSVP limits, and cutoff times.</p>
+      </div>
+
+      <div class="card card-hover reveal reveal-delay-2">
+        <div class="feature-icon">✅</div>
+        <h4>Live RSVP buttons and attendee lists</h4>
+        <p>Members click Accept, Tentative, or Decline directly on the event embed. Soren updates attendee lists in real time and lets each member check their own upcoming events with <code>/myevents</code>.</p>
+      </div>
+
+      <div class="card card-hover reveal reveal-delay-1">
+        <div class="feature-icon">⏰</div>
+        <h4>Discord event reminders that survive restarts</h4>
+        <p>Schedule multiple reminders per event and ping the right roles before start time. Reminder state is stored in the database, so planned notices remain reliable after bot restarts.</p>
+      </div>
+
+      <div class="card card-hover reveal reveal-delay-2">
+        <div class="feature-icon">🔁</div>
+        <h4>Recurring Discord events</h4>
+        <p>Run weekly raids, monthly meetings, daily sessions, bi-weekly events, or custom recurrence intervals. Soren advances recurring events automatically and posts each new occurrence.</p>
+      </div>
+
+      <div class="card card-hover reveal reveal-delay-1">
+        <div class="feature-icon">🗓️</div>
+        <h4>Google Calendar and ICS support</h4>
+        <p>Sync Discord events with Google Calendar, post weekly calendar digest summaries to channels, and export upcoming events as an <code>.ics</code> file for Google Calendar, Apple Calendar, and Outlook.</p>
+      </div>
+
+      <div class="card card-hover reveal reveal-delay-2">
+        <div class="feature-icon">📋</div>
+        <h4>Waitlists, cutoff times, and discussion threads</h4>
+        <p>Cap accepted RSVPs, automatically queue overflow signups, close RSVPs after a deadline, and keep event-specific planning in dedicated Discord threads.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">Use Cases</span>
+      <h2>Made for Discord servers that run on schedules</h2>
+      <p>Soren fits gaming clans, guilds, community groups, creator communities, study groups, project teams, and any server where people need to coordinate around real times.</p>
+    </div>
+
+    <div class="grid-3 reveal">
+      <div class="card">
+        <h4>Gaming clans and guilds</h4>
+        <p>Schedule raids, scrims, practice nights, tournaments, and recurring weekly sessions with RSVP caps and reminders.</p>
+      </div>
+      <div class="card">
+        <h4>Community servers</h4>
+        <p>Plan watch parties, workshops, meetings, voice events, office hours, and member-led meetups from one Discord calendar bot.</p>
+      </div>
+      <div class="card">
+        <h4>Teams and clubs</h4>
+        <p>Keep volunteer shifts, project calls, club meetings, and shared calendars visible inside the channels members already use.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:900px;">
+    <div class="section-header reveal">
+      <span class="section-eyebrow">FAQ</span>
+      <h2>Discord calendar bot questions</h2>
+    </div>
+
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question" type="button"><span>What is a Discord calendar bot?</span><span class="faq-chevron">▾</span></button>
+        <div class="faq-answer">A Discord calendar bot lets a server create, publish, remind, and manage events directly in Discord channels. Soren adds RSVP buttons, recurrence, role reminders, Google Calendar sync, waitlists, and event exports.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button"><span>Can Soren sync Discord events with Google Calendar?</span><span class="faq-chevron">▾</span></button>
+        <div class="faq-answer">Yes. Soren can connect Google Calendar integrations, post weekly digest summaries into Discord channels, and export upcoming Discord events as calendar files.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button"><span>Does Soren support recurring events?</span><span class="faq-chevron">▾</span></button>
+        <div class="faq-answer">Yes. Soren supports daily, weekly, bi-weekly, bi-monthly, monthly, and custom recurring Discord events.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" type="button"><span>How fast can I set it up?</span><span class="faq-chevron">▾</span></button>
+        <div class="faq-answer">Most servers can add Soren, run <code>/setup</code>, assign an Event Creator role, and publish the first event in a few minutes.</div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;margin-top:var(--space-10);">
+      <a href="{{inviteUrl}}" class="btn btn--primary btn--large" target="_blank" rel="noopener">Add to Discord</a>
+      <a href="/features" class="btn btn--secondary btn--large">Compare features</a>
+      <a href="/docs" class="btn btn--secondary btn--large">View commands</a>
+    </div>
+  </div>
+</section>

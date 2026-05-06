@@ -10,8 +10,38 @@ const config  = require("../config");
 router.get("/", (req, res) => {
   res.render("docs", {
     ...config,
-    title:      `Documentation — ${config.botName}`,
+    title:      `Discord Calendar Bot Commands & FAQ | ${config.botName} Docs`,
+    metaDescription: "Soren command documentation for Discord events, RSVP buttons, recurring schedules, reminders, waitlists, Google Calendar sync, ICS exports, and premium settings.",
+    metaKeywords: "Discord calendar bot commands, Discord event bot docs, Discord RSVP commands, Google Calendar Discord bot FAQ",
+    ogTitle: "Discord Calendar Bot Commands & FAQ | Soren Docs",
+    ogDescription: "Browse every Soren slash command and FAQ for Discord event management, RSVPs, reminders, and Google Calendar integrations.",
     activePage: "docs",
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Do I need Google Cloud to use Soren?",
+          acceptedAnswer: { "@type": "Answer", text: "No. The core Discord event system works without Google. Google Calendar integration is optional." },
+        },
+        {
+          "@type": "Question",
+          name: "Can multiple people create events?",
+          acceptedAnswer: { "@type": "Answer", text: "Yes. Anyone with the Event Creator role can create, edit, and delete events. Server administrators always have access." },
+        },
+        {
+          "@type": "Question",
+          name: "Do RSVP buttons work after the bot restarts?",
+          acceptedAnswer: { "@type": "Answer", text: "Yes. Soren registers persistent views so Discord RSVP buttons remain functional across restarts." },
+        },
+        {
+          "@type": "Question",
+          name: "Is Premium per-server or per-account?",
+          acceptedAnswer: { "@type": "Answer", text: "Premium is per-server. Each server that wants premium features needs its own activation code." },
+        },
+      ],
+    },
 
     commandGroups: [
       {

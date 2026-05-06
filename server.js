@@ -50,6 +50,7 @@ app.engine(
     partialsDir: path.join(__dirname, "views/partials"),
     helpers: {
       eq: (a, b) => a === b,
+      json: (context) => JSON.stringify(context, null, 2),
     },
   })
 );
@@ -77,6 +78,7 @@ const homeRouter     = require("./routes/home");
 const featuresRouter = require("./routes/features");
 const setupRouter    = require("./routes/setup");
 const docsRouter     = require("./routes/docs");
+const discordCalendarBotRouter = require("./routes/discord-calendar-bot");
 const privacyRouter  = require("./routes/privacy");
 const termsRouter    = require("./routes/terms");
 const gcalRouter     = require("./routes/gcal");
@@ -86,6 +88,7 @@ app.use("/",         homeRouter);
 app.use("/features", featuresRouter);
 app.use("/setup",    setupRouter);
 app.use("/docs",     docsRouter);
+app.use("/discord-calendar-bot", discordCalendarBotRouter);
 app.use("/privacy",  privacyRouter);
 app.use("/terms",    termsRouter);
 app.use("/gcal",     gcalRouter);
@@ -93,14 +96,21 @@ app.use("/roadmap",  roadmapRouter);
 
 // ── 404 fallback ─────────────────────────────────────────────────────────────
 app.use((req, res) => {
-  res.status(404).render("404", { title: "Page Not Found — Soren" });
+  res.status(404).render("404", {
+    ...config,
+    title: "Page Not Found - Soren",
+    robots: "noindex, follow",
+    metaDescription: "The requested Soren page could not be found.",
+  });
 });
 
 // ── Global Error Handler ──────────────────────────────────────────────────────
 app.use((err, req, res, next) => {
   console.error("Unhandled error:", err);
   res.status(500).render("error", {
+    ...config,
     title:   "Server Error — Soren",
+    robots:  "noindex, nofollow",
     message: "Something went wrong on our end. Please try again later.",
   });
 });

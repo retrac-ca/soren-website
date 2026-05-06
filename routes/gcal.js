@@ -23,6 +23,7 @@ router.get("/callback", (req, res) => {
     return res.render("gcal-callback", {
       ...config,
       title:   "Authorization Failed — Soren",
+      robots:  "noindex, nofollow",
       success: false,
       error:   error || "No authorization code was returned by Google.",
     });
@@ -32,6 +33,7 @@ router.get("/callback", (req, res) => {
   res.render("gcal-callback", {
     ...config,
     title:   "Google Calendar Authorized — Soren",
+    robots:  "noindex, nofollow",
     success: true,
     code:    code,
   });
