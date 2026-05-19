@@ -68,11 +68,16 @@ router.get("/", (req, res) => {
         icon: "📅",
         commands: [
           { name: "/newevent",          who: "Event Creator", description: "Create an event in a single command. Required: channel, title, start. Optional: end, description, timezone (autocomplete), recurrence (autocomplete), recur_interval (days between occurrences for Custom recurrence), role, role2, role3 (@mention pickers — role2 and role3 require Premium), reminder, reminder2 (up to 2 reminders free), reminder3–5 (Premium only, up to 5 reminders total), max_rsvp (accepted RSVP cap), cutoff (date/time when RSVPs close). A public discussion thread is created automatically on the event embed." },
+          { name: "/eventtemplate save", who: "Event Creator", description: "Save reusable event defaults as a named template. Templates can store channel, title, description, timezone, recurrence, reminders, notify roles, and RSVP cap." },
+          { name: "/eventtemplate use",  who: "Event Creator", description: "Create an event from a saved template. Provide the new start time and optionally override channel, title, description, end time, or RSVP cutoff." },
+          { name: "/eventtemplate list", who: "Event Creator", description: "List saved templates for the server, including their default channel, timezone, recurrence, reminders, and role count." },
+          { name: "/eventtemplate delete", who: "Event Creator", description: "Delete a saved event template by name." },
           { name: "/duplicateevent",    who: "Event Creator", description: "Clone an existing event to a new date and time. All settings carry over including the full reminder schedule — provide the event ID and new start time. End time is optional." },
           { name: "/editeventdetails",  who: "Event Creator", description: "Edit an event's title and description by its ID." },
           { name: "/editeventtime",     who: "Event Creator", description: "Edit an event's start time, end time, timezone, and RSVP cutoff by its ID. All reminders are automatically re-armed for the new time." },
           { name: "/editeventmentions", who: "Event Creator", description: "Edit the notify roles for an event by its ID. Free servers support 1 role; Premium servers support up to 3. Use the clear option to remove all roles." },
           { name: "/eventreminders",    who: "Event Creator", description: "Edit the reminder schedule for an event. Free servers can set up to 2 reminder times; Premium servers up to 5. The modal pre-fills with existing reminders so you can see and adjust them in one place. Enter offset times in minutes before start (e.g. 15, 60, 1440)." },
+          { name: "/eventremindermessage", who: "Event Creator", description: "Premium only. Set or clear custom reminder message text for an event. When reminders fire, Soren sends your message instead of the default reminder embed." },
           { name: "/deleteevent",       who: "Event Creator", description: "Permanently delete an event and its embed. The event's discussion thread is also permanently deleted." },
           { name: "/cancelevent",       who: "Event Creator", description: "Soft-cancel an event (marks as cancelled without deleting). The event's discussion thread is automatically archived." },
           { name: "/listevents",        who: "Everyone",      description: "View all upcoming events in this server, paginated." },
@@ -146,7 +151,15 @@ router.get("/", (req, res) => {
       },
       {
         q: "How does the waitlist work?",
-        a: "When an event is full, anyone who clicks Accept sees an ephemeral message with a '📋 Join Waitlist' button. Clicking it queues them up and tells them their position in line. When an accepted attendee drops out, Soren automatically promotes the next person in the queue and sends them a DM so they can head back to the event and claim their spot. No commands needed — it's fully automatic."
+        a: "When an event is full, anyone who clicks Accept sees an ephemeral message with a '📋 Join Waitlist' button. Clicking it queues them up and tells them their position in line. When an accepted attendee drops out, Soren automatically promotes the next person in the queue, refreshes the event embed, and sends them a DM. No commands needed — it's fully automatic."
+      },
+      {
+        q: "Can I customize reminder messages?",
+        a: "Yes, on Premium. Event Creators can run /eventremindermessage for an event and write custom reminder text. When reminders fire, Soren pings the configured notify role(s) and sends that custom message instead of the default reminder embed."
+      },
+      {
+        q: "Can I save event templates?",
+        a: "Yes. Event Creators can use /eventtemplate save to store common event defaults, then /eventtemplate use to create future events from that template with a new start time. Templates are useful for repeated raids, practices, meetings, or community nights."
       },
       {
         q: "Is Premium per-server or per-account?",

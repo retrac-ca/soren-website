@@ -43,6 +43,16 @@
 
       <div class="card card-hover reveal reveal-delay-1">
         <div class="feature-icon">⏰</div>
+        <h4>Event Templates</h4>
+        <p>
+          Save common event defaults with <code>/eventtemplate save</code>, then create the next one with
+          <code>/eventtemplate use</code> and a new start time. Templates carry over channel, description,
+          timezone, recurrence, reminder offsets, notify roles, and RSVP caps.
+        </p>
+      </div>
+
+      <div class="card card-hover reveal reveal-delay-1">
+        <div class="feature-icon">⏰</div>
         <h4>Multiple Reminders Per Event</h4>
         <p>
           Set up to 2 reminder times per event on the free tier, or up to 5 on Premium — configured in <code>/newevent</code>
@@ -73,10 +83,10 @@
 
       <div class="card card-hover reveal reveal-delay-2">
         <div class="feature-icon">🔗</div>
-        <h4>Primary Google Calendar Sync</h4>
+        <h4>Google Calendar Digests</h4>
         <p>
-          Events created via <code>/newevent</code> can be pushed to a connected Google Calendar.
-          New events in that calendar sync back to Discord every 15 minutes.
+          Connected calendars can post digest summaries and upcoming-event reminders to Discord.
+          Use <code>/gcalint add</code> to connect each calendar to the channel where it should post.
         </p>
       </div>
 
@@ -104,7 +114,17 @@
         <p>
           Set a cap on accepted RSVPs with <code>max_rsvp</code> in <code>/newevent</code>. When the event is full,
           Soren prompts overflow signups to join the waitlist and shows them their position in line.
-          When a spot opens up, the next person in the queue gets a DM automatically.
+          When a spot opens up, the next person in the queue is promoted automatically and gets a DM.
+        </p>
+      </div>
+
+      <div class="card card-hover reveal reveal-delay-2">
+        <div class="feature-icon">✍️</div>
+        <h4>Custom Reminder Messages</h4>
+        <p>
+          Premium servers can use <code>/eventremindermessage</code> to replace the default reminder embed
+          with custom reminder text for a specific event. Soren still pings the configured notify role(s),
+          then sends your message when each reminder fires.
         </p>
       </div>
 
